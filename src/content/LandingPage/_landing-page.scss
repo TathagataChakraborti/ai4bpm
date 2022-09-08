@@ -1,0 +1,51 @@
+.title {
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.text-blue {
+  color: #005dff;
+}
+
+.sub-title {
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.vertial-align-middle {
+  vertical-align: middle;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.read-more {
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #eaeaea;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: none;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.bx--structured-list-row:last-of-type,
+.bx--accordion__item:last-of-type {
+  border: none !important;
+}
