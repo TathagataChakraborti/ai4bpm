@@ -41,7 +41,7 @@ def fetch():
 
     try:
 
-        ### SAVE DATA ###
+        ### FETCH DATA ###
         number_of_entries = 666
 
         return json.dumps({"success": True, "info": number_of_entries})
