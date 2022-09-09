@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
 
@@ -14,8 +15,8 @@ from pymongo import MongoClient
 app = Flask(__name__)
 cors = CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
-
-CONFIG = "mongodb+srv://{username}:{password}@{cluster_name}.ix0jn6h.mongodb.net/?retryWrites=true&w=majority"
+CONFIG = "mongodb://{username}:{password}@ac-c3yhnb1-shard-00-00.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-01.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-02.ix0jn6h.mongodb.net:27017/?ssl=true&replicaSet=atlas-e2298v-shard-0&authSource=admin&retryWrites=true&w=majority"
+# CONFIG = "mongodb+srv://{username}:{password}@{cluster_name}.ix0jn6h.mongodb.net/?retryWrites=true&w=majority"
 db_name = None
 collection_name = None
 
@@ -50,7 +51,8 @@ def register():
         else:
             return json.dumps({"success": False, "info": "Email already registered."})
 
-    except:
+    except Exception as e:
+        print(e, sys.stdout)
         return json.dumps({"success": False, "info": "Could not save data."})
 
 
@@ -61,50 +63,45 @@ def fetch():
 
         collection = __get_collection(db_name, collection_name)
         number_of_entries = collection.count_documents({})
-
+        app.logger.info(db_name)
+        app.logger.info(f"number retrieved is {number_of_entries}")
         return json.dumps({"success": True, "info": number_of_entries})
 
-    except:
+    except Exception as e:
+        print(e, sys.stdout)
         return json.dumps({"success": False})
 
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="MongoDB Atlas Parameters.")
-    parser.add_argument("--username", type=str, help="Username.")
-    parser.add_argument("--password", type=str, help="Password.")
-    parser.add_argument("--cluster", type=str, help="Cluster Name.")
-    parser.add_argument("--db", type=str, help="Database Name.")
-    parser.add_argument("--collection", type=str, help="Collection Name.")
-    parser.add_argument("--env", action="store_true", help="Set environment variables.")
+    # parser = argparse.ArgumentParser(description="MongoDB Atlas Parameters.")
+    # parser.add_argument("--username", type=str, help="Username.")
+    # parser.add_argument("--password", type=str, help="Password.")
+    # parser.add_argument("--cluster", type=str, help="Cluster Name.")
+    # parser.add_argument("--db", type=str, help="Database Name.")
+    # parser.add_argument("--collection", type=str, help="Collection Name.")
+    # parser.add_argument("--env", action="store_true", help="Set environment variables.")
 
-    args = parser.parse_args()
-    
-    # for containerization
-    mongodb_username = os.getenv("MONGODB_USERNAME")
-    mongodb_password = os.getenv("MONGODB_PASSWORD")
-    mongodb_cluster_name = os.getenv("MONGODB_CLUSTER_NAME")
-    mongodb_db_name = os.getenv("MONGODB_DB_NAME")
-    mongodb_collection_name = os.getenv("MONGODB_COLLECTION_NAME")
-
-    if mongodb_username is None and args.env:
-        mongodb_username = args.username
-        mongodb_password = args.password
-        mongodb_cluster_name = args.cluster
-        mongodb_db_name = args.db
-        mongodb_collection_name = args.collection
-    elif mongodb_username is None and (not args.env):
-        config = json.loads(open("config.json").read())
-        mongodb_username = config["username"]
-        mongodb_password = config["password"]
-        mongodb_cluster_name = config["cluster_name"]
-        mongodb_db_name = config["db_name"]
-        mongodb_collection_name = config["collection_name"]
-
+    # args = parser.parse_args()
     CONFIG = CONFIG.format(
-        username=mongodb_username, password=mongodb_password, cluster_name=mongodb_cluster_name
+        username="DU7UYg2nlU3NEhRglEiS", password="CimB3C5L0zJKAAWUWGtM", cluster_name="jungkoo"
     )
-    db_name = mongodb_db_name
-    collection_name = mongodb_collection_name
+    db_name = "jungkoo"
+    collection_name = "ai4bpm"
+    # if args.username:
+    #     CONFIG = CONFIG.format(
+    #         username=args.username, password=args.password, cluster_name=args.cluster
+    #     )
+    #     db_name = args.db
+    #     collection_name = args.collection
+    # else:
+    #     config = json.loads(open("config.json").read())
+    #     CONFIG = CONFIG.format(
+    #         username=config["username"], password=config["password"], cluster_name=config["cluster_name"]
+    #     )
+    #     db_name = config["db_name"]
+    #     collection_name = config["collection_name"]
+
+
 
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 3456)))
