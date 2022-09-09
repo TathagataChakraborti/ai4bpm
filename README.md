@@ -5,7 +5,7 @@
 ```
 $ cd src/backend
 $ pip install -r requirements.txt
-$ python app.py
+$ python server.py
 ```
 
 ### Bring up the frontend

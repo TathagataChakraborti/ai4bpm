@@ -79,25 +79,32 @@ if __name__ == "__main__":
     parser.add_argument("--env", action="store_true", help="Set environment variables.")
 
     args = parser.parse_args()
+    
+    # for containerization
+    mongodb_username = os.getenv("MONGODB_USERNAME")
+    mongodb_password = os.getenv("MONGODB_PASSWORD")
+    mongodb_cluster_name = os.getenv("MONGODB_CLUSTER_NAME")
+    mongodb_db_name = os.getenv("MONGODB_DB_NAME")
+    mongodb_collection_name = os.getenv("MONGODB_COLLECTION_NAME")
 
-    if args.env:
-        CONFIG = CONFIG.format(
-            username=args.username, password=args.password, cluster_name=args.cluster
-        )
+    if mongodb_username is None and args.env:
+        mongodb_username = args.username
+        mongodb_password = args.password
+        mongodb_cluster_name = args.cluster
+        mongodb_db_name = args.db
+        mongodb_collection_name = args.collection
+    elif mongodb_username is None and (not args.env):
+        config = json.loads(open("config.json").read())
+        mongodb_username = config["username"]
+        mongodb_password = config["password"]
+        mongodb_cluster_name = config["cluster_name"]
+        mongodb_db_name = config["db_name"]
+        mongodb_collection_name = config["collection_name"]
 
-        db_name = args.db
-        collection_name = args.collection
-
-    else:
-
-        config = json.loads(open("confiag.json").read())
-        CONFIG = CONFIG.format(
-            username=config["username"],
-            password=config["password"],
-            cluster_name=config["cluster_name"],
-        )
-
-        db_name = config["db_name"]
-        collection_name = config["collection_name"]
+    CONFIG = CONFIG.format(
+        username=mongodb_username, password=mongodb_password, cluster_name=mongodb_cluster_name
+    )
+    db_name = mongodb_db_name
+    collection_name = mongodb_collection_name
 
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 3456)))
