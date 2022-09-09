@@ -20,7 +20,8 @@ import {
 
 const TeamListShuffled = shuffleArray(TeamList);
 const SisterVenuesShuffled = shuffleArray(SisterVenues);
-const link_to_database = 'http://localhost:3456/';
+const link_to_database =
+  'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class LandingPage extends React.Component {
     };
 
     async function fetchData() {
-      var response = await fetch(link_to_database + 'fetch', requestOptions);
+      var response = await fetch(link_to_database + '/fetch', requestOptions);
       return response.json();
     }
 
@@ -72,7 +73,10 @@ class LandingPage extends React.Component {
     };
 
     async function register() {
-      var response = await fetch(link_to_database + 'register', requestOptions);
+      var response = await fetch(
+        link_to_database + '/register',
+        requestOptions
+      );
       return response.json();
     }
 
@@ -86,7 +90,6 @@ class LandingPage extends React.Component {
             register_count: this.state.register_count + 1,
           });
         } else {
-          console.log(data);
           this.setState({
             ...this.state,
             message: data.info,
@@ -145,7 +148,7 @@ class LandingPage extends React.Component {
                       <>
                         {this.state.registered && (
                           <span className="text-blue">
-                            {this.state.message}
+                            {this.state.message}{' '}
                           </span>
                         )}
                         {this.state.register_count > 0 && (
@@ -192,7 +195,7 @@ class LandingPage extends React.Component {
                     current
                     label={
                       <>
-                        <span style={{ color: 'Blue' }}>Planning Stage </span>
+                        <span style={{ color: 'Blue' }}>Proposal Stage </span>
                       </>
                     }
                   />

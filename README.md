@@ -11,7 +11,6 @@ $ python app.py
 ### Bring up the frontend
 
 ```
-$ yarn 
+$ yarn
 $ yarn start
 ```
-
