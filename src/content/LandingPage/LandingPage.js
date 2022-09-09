@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReferenceList } from './data/References';
+import { InvitedList } from './data/Speakers';
 import { TeamList } from './data/Team';
 import { SisterVenues } from './data/SisterVenues';
 import {
@@ -11,6 +12,7 @@ import {
 
 import {
   StructuredListBody,
+  Tile,
   Button,
   Link,
   TextInput,
@@ -103,11 +105,13 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className="bx--row">
-        <div className="bx--col-lg-10" style={{ backgroundColor: '#f4f4f4' }}>
+        <div
+          className="bx--col-lg-10"
+          style={{ paddingBottom: '100px', backgroundColor: '#f4f4f4' }}>
           <div
             className="bx--grid bx--grid--full-width container"
             style={{ paddingTop: '50px' }}>
-            <h1 className="text-blue">AAAI 2023 Bridge on</h1>
+            <h1 className="text-blue">AAAI 2023 Bridge Proposal on</h1>
             <h1 className="title">
               Artificial Intelligence and Business Process Management
             </h1>
@@ -198,13 +202,14 @@ class LandingPage extends React.Component {
                         <span style={{ color: 'Blue' }}>Proposal Stage </span>
                       </>
                     }
+                    secondaryLabel="Now"
                   />
                   <ProgressStep
-                    label={
-                      <>
-                        <span style={{ color: 'Blue' }}>Submissions Due </span>
-                      </>
-                    }
+                    label="Call for Participation"
+                    secondaryLabel="Oct 7, 2022"
+                  />
+                  <ProgressStep
+                    label="Submissions Due"
                     secondaryLabel="Nov 18, 2022"
                   />
                   <ProgressStep
@@ -212,11 +217,37 @@ class LandingPage extends React.Component {
                     secondaryLabel="Dec 2, 2022"
                   />
                   <ProgressStep
-                    label="AAAI 2023"
+                    label="AI4BPM at AAAI 2023"
                     secondaryLabel="Feb 7-8, 2022"
                   />
                 </ProgressIndicator>
               </div>
+            </div>
+
+            <h4 style={{ marginTop: '100px' }}>Confirmed Speakers</h4>
+            <hr />
+
+            <div className="bx--row">
+              <div className="bx--col-lg-16">
+                <Tile
+                  style={{ backgroundColor: '#fafafa', marginBottom: '20px' }}>
+                  <p>
+                    More details of the program, including new speakers,
+                    tutorials, and featured tools for system demonstrations,
+                    will be announced in due course. Make sure to register your
+                    interest above, to get a notification when the event is
+                    confirmed.
+                  </p>
+                </Tile>
+              </div>
+            </div>
+
+            <div className="bx--row">
+              {InvitedList.map((item, key) => (
+                <React.Fragment key={key}>
+                  <Instructor props={item} />
+                </React.Fragment>
+              ))}
             </div>
 
             <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
@@ -228,11 +259,6 @@ class LandingPage extends React.Component {
                   <Instructor props={item} />
                 </React.Fragment>
               ))}
-
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
           </div>
         </div>
@@ -240,33 +266,37 @@ class LandingPage extends React.Component {
         <div className="bx--col-lg-6">
           <div
             className="bx--grid bx--grid--full-width container"
-            style={{ paddingTop: '50px', backgroundColor: 'white' }}>
+            style={{
+              paddingTop: '50px',
+              backgroundColor: 'white',
+              position: 'relative',
+              height: '100%',
+            }}>
             <img src="/logo.png" alt="logo" width="90%" />
 
-            <br />
-            <br />
-            <br />
-            <br />
+            <div style={{ marginTop: '50px', marginBottom: '150px' }}>
+              <StructuredListBody>
+                {ReferenceList.map((item, key) => (
+                  <React.Fragment key={key}>
+                    <Reference props={item} />
+                  </React.Fragment>
+                ))}
+              </StructuredListBody>
 
-            <StructuredListBody>
-              {ReferenceList.map((item, key) => (
+              {SisterVenuesShuffled.map((item, key) => (
                 <React.Fragment key={key}>
-                  <Reference props={item} />
+                  <Resource props={item} />
                 </React.Fragment>
               ))}
-            </StructuredListBody>
-
-            {SisterVenuesShuffled.map((item, key) => (
-              <React.Fragment key={key}>
-                <Resource props={item} />
-              </React.Fragment>
-            ))}
+            </div>
 
             <img
               style={{
                 marginTop: '150px',
                 marginBottom: '50px',
                 marginLeft: '10px',
+                position: 'absolute',
+                bottom: '0',
               }}
               src="/images/ibm.png"
               alt="IBM Research"
