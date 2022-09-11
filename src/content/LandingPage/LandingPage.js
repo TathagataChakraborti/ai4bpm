@@ -202,7 +202,7 @@ class LandingPage extends React.Component {
                         <span style={{ color: 'Blue' }}>Proposal Stage </span>
                       </>
                     }
-                    secondaryLabel="Now"
+                    secondaryLabel="Sept 23, 2022"
                   />
                   <ProgressStep
                     label="Call for Participation"

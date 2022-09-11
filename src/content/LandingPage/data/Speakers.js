@@ -7,6 +7,13 @@ const InvitedList = [
     image: 'manuela',
   },
   {
+    id: 3,
+    name: 'Wil van der Aalst',
+    affiliation: 'RWTH Aachen University',
+    link: 'http://www.padsweb.rwth-aachen.de/wvdaalst/',
+    image: 'wil',
+  },
+  {
     id: 1,
     name: 'Yolanda Gil',
     affiliation: 'University of Southern California',
@@ -22,10 +29,10 @@ const InvitedList = [
   },
   {
     id: 3,
-    name: 'Wil van der Aalst',
-    affiliation: 'RWTH Aachen University',
-    link: 'http://www.padsweb.rwth-aachen.de/wvdaalst/',
-    image: 'wil',
+    name: 'Marlon Dumas',
+    affiliation: 'University of Tartu',
+    link: 'https://kodu.ut.ee/~dumas/',
+    image: 'marlon',
   },
   {
     id: 4,
