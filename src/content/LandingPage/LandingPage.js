@@ -23,7 +23,7 @@ import {
 const TeamListShuffled = shuffleArray(TeamList);
 const SisterVenuesShuffled = shuffleArray(SisterVenues);
 const link_to_database =
-  'http://localhost:3456';
+  'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
 
 class LandingPage extends React.Component {
   constructor(props) {
