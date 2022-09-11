@@ -22,6 +22,13 @@ const InvitedList = [
   },
   {
     id: 3,
+    name: 'Wil van der Aalst',
+    affiliation: 'RWTH Aachen University',
+    link: 'http://www.padsweb.rwth-aachen.de/wvdaalst/',
+    image: 'wil',
+  },
+  {
+    id: 4,
     name: 'Many More to Come!',
     affiliation: '',
     image: 'default',
