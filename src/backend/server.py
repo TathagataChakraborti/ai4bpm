@@ -15,7 +15,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 cors = CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
-CONFIG = "mongodb://{username}:{password}@ac-c3yhnb1-shard-00-00.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-01.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-02.ix0jn6h.mongodb.net:27017/?ssl=true&replicaSet=atlas-e2298v-shard-0&authSource=admin&retryWrites=true&w=majority"
+CONFIG = "mongodb://{username}:{password}@{cluster_name}.mongodb.net:27017,ac-c3yhnb1-shard-00-01.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-02.ix0jn6h.mongodb.net:27017/?ssl=true&replicaSet=atlas-e2298v-shard-0&authSource=admin&retryWrites=true&w=majority"
 # CONFIG = "mongodb+srv://{username}:{password}@{cluster_name}.ix0jn6h.mongodb.net/?retryWrites=true&w=majority"
 db_name = None
 collection_name = None
@@ -74,34 +74,37 @@ def fetch():
 
 if __name__ == "__main__":
 
-    # parser = argparse.ArgumentParser(description="MongoDB Atlas Parameters.")
-    # parser.add_argument("--username", type=str, help="Username.")
-    # parser.add_argument("--password", type=str, help="Password.")
-    # parser.add_argument("--cluster", type=str, help="Cluster Name.")
-    # parser.add_argument("--db", type=str, help="Database Name.")
-    # parser.add_argument("--collection", type=str, help="Collection Name.")
-    # parser.add_argument("--env", action="store_true", help="Set environment variables.")
+    parser = argparse.ArgumentParser(description="MongoDB Atlas Parameters.")
+    parser.add_argument("--username", type=str, help="Username.")
+    parser.add_argument("--password", type=str, help="Password.")
+    parser.add_argument("--cluster", type=str, help="Cluster Name.")
+    parser.add_argument("--db", type=str, help="Database Name.")
+    parser.add_argument("--collection", type=str, help="Collection Name.")
+    parser.add_argument("--env", action="store_true",
+                        help="Set environment variables.")
 
-    # args = parser.parse_args()
-    CONFIG = CONFIG.format(
-        username="DU7UYg2nlU3NEhRglEiS", password="CimB3C5L0zJKAAWUWGtM", cluster_name="jungkoo"
-    )
-    db_name = "jungkoo"
-    collection_name = "ai4bpm"
-    # if args.username:
-    #     CONFIG = CONFIG.format(
-    #         username=args.username, password=args.password, cluster_name=args.cluster
-    #     )
-    #     db_name = args.db
-    #     collection_name = args.collection
-    # else:
-    #     config = json.loads(open("config.json").read())
-    #     CONFIG = CONFIG.format(
-    #         username=config["username"], password=config["password"], cluster_name=config["cluster_name"]
-    #     )
-    #     db_name = config["db_name"]
-    #     collection_name = config["collection_name"]
+    args = parser.parse_args()
 
-
+    if os.getenv("MONGODB_USERNAME"):
+        CONFIG = CONFIG.format(
+            username=os.getenv("MONGODB_USERNAME"),
+            password=os.getenv("MONGODB_PASSWORD"),
+            cluster_name=os.getenv("MONGODB_CLUSTER_NAME")
+        )
+        db_name = os.getenv("MONGODB_DB_NAME")
+        collection_name = os.getenv("MONGODB_COLLECTION_NAME")
+    elif args.env:
+        CONFIG = CONFIG.format(
+            username=args.username, password=args.password, cluster_name=args.cluster
+        )
+        db_name = args.db
+        collection_name = args.collection
+    else:
+        config = json.loads(open("config.json").read())
+        CONFIG = CONFIG.format(
+            username=config["username"], password=config["password"], cluster_name=config["cluster_name"]
+        )
+        db_name = config["db_name"]
+        collection_name = config["collection_name"]
 
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 3456)))

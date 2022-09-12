@@ -2,24 +2,9 @@ FROM python:3
 
 COPY . .
 
-RUN apt-get update
-RUN apt-get install curl
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install flask-cors --upgrade
 RUN pip3 install gunicorn==20.0.4
 
-# ARG MONGODB_USERNAME
-# ARG MONGODB_PASSWORD
-# ARG MONGODB_CLUSTER_NAME
-# ARG MONGODB_DB_NAME
-# ARG MONGODB_COLLECTION_NAME
-
-# ENV MONGODB_USERNAME=$MONGODB_USERNAME
-# ENV MONGODB_PASSWORD=$MONGODB_PASSWORD
-# ENV MONGODB_CLUSTER_NAME=$MONGODB_CLUSTER_NAME
-# ENV MONGODB_DB_NAME=$MONGODB_DB_NAME
-# ENV MONGODB_COLLECTION_NAME=$MONGODB_COLLECTION_NAME
-
 EXPOSE 3456
-# CMD ["gunicorn", "--workers", "1", "-b", "0.0.0.0:3456", "server:app"]
 CMD ["python", "./server.py"]
