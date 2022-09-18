@@ -6,6 +6,26 @@
   font-weight: lighter;
 }
 
+.tool {
+  background-color: white;
+  min-height: 300px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tool-links {
+  position: absolute;
+  bottom: 0;
+}
+
+.button-diminish {
+  margin-bottom: 10px;
+  height: 1.5rem;
+  width: 5rem;
+  min-height: 1rem;
+  max-width: 75%;
+}
+
 .info-card {
   margin-top: $spacing-09;
   display: flex;

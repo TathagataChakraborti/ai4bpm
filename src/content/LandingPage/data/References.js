@@ -6,7 +6,8 @@ const ReferenceList = [
     authors:
       'Tathagata Chakraborti, Yara Rizk, Vatche Isahagian, Burak Aksar, and Francesco Fuggitti',
     venue: 'BPM 2022 RPA Forum Keynote',
-    link: 'https://link.springer.com/content/pdf/10.1007/978-3-031-16168-1.pdf#page=134',
+    link:
+      'https://link.springer.com/content/pdf/10.1007/978-3-031-16168-1.pdf#page=134',
   },
   {
     id: 0,

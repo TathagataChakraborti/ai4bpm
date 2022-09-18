@@ -3,10 +3,12 @@ import { ReferenceList } from './data/References';
 import { InvitedList } from './data/Speakers';
 import { TeamList } from './data/Team';
 import { SisterVenues } from './data/SisterVenues';
+import { Tools } from './data/Tools';
 import {
   Reference,
   Instructor,
   Resource,
+  Tool,
   shuffleArray,
 } from '../../components/Info';
 
@@ -18,6 +20,7 @@ import {
   TextInput,
   ProgressStep,
   ProgressIndicator,
+  ToastNotification,
 } from 'carbon-components-react';
 
 const TeamListShuffled = shuffleArray(TeamList);
@@ -186,10 +189,34 @@ class LandingPage extends React.Component {
                     Register
                   </Button>
 
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+                  <div style={{ marginTop: '50px', marginBottom: '50px' }}>
+                    <ToastNotification
+                      lowContrast
+                      kind="info"
+                      style={{ width: '100%' }}
+                      caption={
+                        <Link
+                          href="https://twitter.com/tsitsulin_/status/1571082786181894146"
+                          target="_blank">
+                          Learn more
+                        </Link>
+                      }
+                      iconDescription="close button"
+                      subtitle={
+                        <span>
+                          We stand with the global AI community and recognize
+                          that most of the world cannot attend conferences in
+                          Europe and the USA. This disproportionately affects
+                          our black and brown colleagues. While we hope that you
+                          can attend in person if you can, in conversations with
+                          AAAI 2023, we commit to a hybrid format, until such
+                          time conferences can find more friendly hosts.
+                        </span>
+                      }
+                      timeout={0}
+                      title="Event Format"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -249,6 +276,20 @@ class LandingPage extends React.Component {
                 </React.Fragment>
               ))}
             </div>
+
+            <fieldset className="bx--col-lg-12 toolbox">
+              <legend className="text-blue">
+                Featured Tools and System Demonstrations
+              </legend>
+
+              <div className="bx--row">
+                {Tools.map((item, key) => (
+                  <React.Fragment key={key}>
+                    <Tool props={item} />
+                  </React.Fragment>
+                ))}
+              </div>
+            </fieldset>
 
             <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
             <hr />

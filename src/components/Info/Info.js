@@ -25,6 +25,48 @@ function shuffleArray(array) {
   return newArray;
 }
 
+const Tool = props => (
+  <div className="bx--col-lg-3">
+    <Tile className={`${props.props.name ? 'tool' : ''}`}>
+      <div className="bx--row" style={{ position: 'relative' }}>
+        <div className="bx--col-lg-12">
+          <h6 className="text-blue">{props.props.name}</h6>
+          <p className={`${props.props.name ? '' : 'text-blue'}`}>
+            {props.props.description}
+          </p>
+        </div>
+      </div>
+
+      <div className="tool-links">
+        {props.props.home && (
+          <>
+            <Button
+              className="button-diminish"
+              size="sm"
+              href={props.props.home}
+              target="_blank"
+              kind="primary">
+              Home
+            </Button>
+            <br />
+          </>
+        )}
+
+        {props.props.code && (
+          <Button
+            className="button-diminish"
+            href={props.props.code}
+            target="_blank"
+            kind="secondary"
+            size="sm">
+            GitHub
+          </Button>
+        )}
+      </div>
+    </Tile>
+  </div>
+);
+
 const Reference = props => {
   return (
     <StructuredListRow>
@@ -46,12 +88,15 @@ const Reference = props => {
         <strong>{props.props.title}</strong> by {props.props.authors}.{' '}
         {props.props.venue && <>In: {props.props.venue}.</>}
         {props.props.secondarylink && (
-          <Link
-            style={{ marginTop: '10px' }}
-            href={props.props.secondarylink}
-            target="_blank">
-            {props.props.secondarytext}
-          </Link>
+          <>
+            <br />
+            <Link
+              style={{ marginTop: '10px' }}
+              href={props.props.secondarylink}
+              target="_blank">
+              {props.props.secondarytext}
+            </Link>
+          </>
         )}
       </StructuredListCell>
     </StructuredListRow>
@@ -128,4 +173,4 @@ const Resource = props => (
   </div>
 );
 
-export { Instructor, Reference, Resource, shuffleArray };
+export { Instructor, Reference, Resource, Tool, shuffleArray };
