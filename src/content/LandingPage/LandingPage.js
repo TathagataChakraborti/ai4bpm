@@ -322,6 +322,7 @@ class LandingPage extends React.Component {
                     </div>
                     <ButtonSet style={{ marginTop: '30px' }}>
                       <Button
+                        disabled
                         target="_blank"
                         href=""
                         size="sm"
@@ -330,6 +331,7 @@ class LandingPage extends React.Component {
                         Read the Full Call
                       </Button>
                       <Button
+                        disabled
                         target="_blank"
                         href=""
                         size="sm"
@@ -350,7 +352,7 @@ class LandingPage extends React.Component {
                   style={{ marginTop: '15px' }}>
                   <ProgressStep
                     current
-                    label="Call for Participation"
+                    label="Call for Contributions"
                     secondaryLabel={
                       <>
                         <span style={{ color: 'Blue' }}>Coming soon</span>
