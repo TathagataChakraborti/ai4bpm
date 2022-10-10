@@ -3,6 +3,12 @@
   font-weight: 100;
 }
 
+.call-button {
+  margin-right: 10px;
+  width: 220px !important;
+  max-width: 220px !important;
+}
+
 .text-blue {
   color: #005dff;
 }
@@ -17,7 +23,6 @@
 }
 
 .toolbox {
-  margin-top: 50px;
   padding-top: 20px;
   border: #005dff solid 0.5px;
 }

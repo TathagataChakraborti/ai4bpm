@@ -26,7 +26,7 @@ function shuffleArray(array) {
 }
 
 const Tool = props => (
-  <div className="bx--col-lg-3" style={{ paddingRight: '3rem' }}>
+  <div className="bx--col-lg-3">
     <Tile className={`${props.props.name ? 'tool' : ''}`}>
       <div className="bx--row" style={{ position: 'relative' }}>
         <div className="bx--col-lg-12">

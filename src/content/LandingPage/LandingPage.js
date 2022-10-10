@@ -12,9 +12,12 @@ import {
   shuffleArray,
 } from '../../components/Info';
 
+import '@carbon/charts/styles.css';
+import { MeterChart } from '@carbon/charts-react';
 import {
   StructuredListBody,
   Tile,
+  ButtonSet,
   Button,
   Link,
   TextInput,
@@ -24,6 +27,8 @@ import {
   FormGroup,
   RadioButtonGroup,
   RadioButton,
+  UnorderedList,
+  ListItem,
 } from 'carbon-components-react';
 
 const DEFAULT_MODE = 'in-person';
@@ -41,8 +46,61 @@ class LandingPage extends React.Component {
       register_count: 0,
       email: '',
       mode: DEFAULT_MODE,
+      data: [],
+      options: {
+        title: 'Interest gauge',
+        height: '125px',
+        meter: {
+          proportional: {
+            total: 0,
+            unit: 'registrations',
+          },
+        },
+        color: {
+          pairing: {
+            option: 1,
+          },
+        },
+        toolbar: {
+          enabled: false,
+        },
+      },
     };
   }
+  to;
+
+  updateData = data => {
+    const new_data = [
+      {
+        group: 'In person',
+        value: data['entries']['in-person'],
+      },
+      {
+        group: 'Online',
+        value: data['entries']['hybrid'],
+      },
+      {
+        group: 'Not sure yet',
+        value: data['entries']['dont-know'],
+      },
+    ];
+
+    this.setState({
+      ...this.state,
+      register_count: data['count'],
+      data: new_data,
+      options: {
+        ...this.state.options,
+        meter: {
+          ...this.state.options.meter,
+          proportional: {
+            ...this.state.options.meter.proportional,
+            total: data['count'],
+          },
+        },
+      },
+    });
+  };
 
   componentDidMount = () => {
     const requestOptions = {
@@ -57,11 +115,9 @@ class LandingPage extends React.Component {
 
     fetchData()
       .then(data => {
-        if (data['success'])
-          this.setState({
-            ...this.state,
-            register_count: data['info'],
-          });
+        if (data.success) {
+          this.updateData(data);
+        }
       })
       .catch(error => {});
   };
@@ -100,20 +156,13 @@ class LandingPage extends React.Component {
 
     register()
       .then(data => {
-        if (data.success) {
-          this.setState({
-            ...this.state,
-            message: data.info,
-            registered: true,
-            register_count: this.state.register_count + 1,
-          });
-        } else {
-          this.setState({
-            ...this.state,
-            message: data.info,
-            registered: true,
-          });
-        }
+        this.setState({
+          ...this.state,
+          message: data.info,
+          registered: true,
+        });
+
+        if (data.success) this.updateData(data);
       })
       .catch(error => {});
   };
@@ -127,7 +176,7 @@ class LandingPage extends React.Component {
           <div
             className="bx--grid bx--grid--full-width container"
             style={{ paddingTop: '50px' }}>
-            <h1 className="text-blue">AAAI 2023 Bridge on</h1>
+            <h1 className="text-blue">AAAI 2023 Bridge Program on</h1>
             <h1 className="title">
               Artificial Intelligence and Business Process Management
             </h1>
@@ -228,40 +277,77 @@ class LandingPage extends React.Component {
                     }>
                     Register
                   </Button>
-
-                  <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-                    <ToastNotification
-                      lowContrast
-                      kind="info"
-                      style={{ width: '100%' }}
-                      caption={
-                        <Link
-                          href="https://twitter.com/tsitsulin_/status/1571082786181894146"
-                          target="_blank">
-                          Learn more
-                        </Link>
-                      }
-                      iconDescription="close button"
-                      subtitle={
-                        <span>
-                          We stand with the global AI community and recognize
-                          that most of the world cannot attend conferences in
-                          Europe and the USA. This disproportionately affects
-                          our black and brown colleagues. While we hope that you
-                          can attend in person if you can, in conversations with
-                          AAAI 2023, we commit to a hybrid format, until such
-                          time conferences can find more friendly hosts.
-                        </span>
-                      }
-                      timeout={0}
-                      title="Event Format"
-                    />
-                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="bx--col-lg-4">
-                <ProgressIndicator vertical currentIndex={1}>
+            <div className="bx--row" style={{ marginTop: '50px' }}>
+              <div className="bx--col-lg-10" style={{ padding: '10px' }}>
+                <fieldset className="toolbox">
+                  <legend className="text-blue" style={{ margin: '10px' }}>
+                    Call for Contributions
+                  </legend>
+
+                  <div className="bx--col-lg-16">
+                    We welcome three types of contributions from interested
+                    participants:
+                    <div className="bx--col-lg-16">
+                      <UnorderedList>
+                        <ListItem style={{ marginTop: '10px' }}>
+                          <strong>Contributed posters:</strong> Participants are
+                          encouraged to submit 2-page abstracts on their work to
+                          participate in the extended poster and meet-and-greet
+                          session. This can be about recently published or
+                          ongoing (or under review) work.
+                        </ListItem>
+                        <ListItem style={{ marginTop: '10px' }}>
+                          <strong>System demonstrations:</strong> The poster
+                          session will also feature live system demonstrations
+                          of tools and softwares that are useful to both AI and
+                          BPM communities. Treat this as a demonstration
+                          submission to a conference, but specifically on the AI
+                          x BPM topic.
+                        </ListItem>
+                        <ListItem style={{ marginTop: '10px' }}>
+                          <strong>Student contributions:</strong> Students
+                          working at the intersection of AI and BPM are
+                          encouraged to submit 2-page abstracts summarizing
+                          their work. Students will be given an opportunity to
+                          present their work as posters and will also be paired
+                          with mentors for dedicated mentoring sessions. Treat
+                          this as a doctoral consortium submission to a
+                          conference, but specifically on the AI x BPM topic.
+                        </ListItem>
+                      </UnorderedList>
+                    </div>
+                    <ButtonSet style={{ marginTop: '30px' }}>
+                      <Button
+                        target="_blank"
+                        href=""
+                        size="sm"
+                        kind="secondary"
+                        className="call-button">
+                        Read the Full Call
+                      </Button>
+                      <Button
+                        target="_blank"
+                        href=""
+                        size="sm"
+                        kind="primary"
+                        className="call-button">
+                        Submit on EasyChair
+                      </Button>
+                    </ButtonSet>
+                  </div>
+
+                  <br />
+                </fieldset>
+              </div>
+              <div className="bx--col-lg-6">
+                <ProgressIndicator
+                  vertical
+                  currentIndex={1}
+                  style={{ marginTop: '15px' }}>
                   <ProgressStep
                     current
                     label="Call for Participation"
@@ -287,7 +373,60 @@ class LandingPage extends React.Component {
               </div>
             </div>
 
-            <h4 style={{ marginTop: '100px' }}>Confirmed Speakers</h4>
+            <hr />
+
+            <div className="bx--row">
+              <div className="bx--col-lg-10">
+                <div style={{ marginBottom: '50px' }}>
+                  <ToastNotification
+                    lowContrast
+                    kind="info"
+                    style={{ width: '100%' }}
+                    caption={
+                      <Link
+                        href="https://twitter.com/tsitsulin_/status/1571082786181894146"
+                        target="_blank">
+                        Learn more
+                      </Link>
+                    }
+                    iconDescription="close button"
+                    subtitle={
+                      <span>
+                        We stand with the global AI community and recognize that
+                        most of the world cannot attend conferences in Europe
+                        and the USA. This disproportionately affects our black
+                        and brown colleagues. While we hope that you can attend
+                        in person if you can, in conversations with AAAI 2023,
+                        we commit to a hybrid format, until such time
+                        conferences can find more friendly hosts.
+                      </span>
+                    }
+                    timeout={0}
+                    title="Event Format"
+                  />
+                </div>
+              </div>
+              <div className="bx--col-lg-6" style={{ paddingTop: '20px' }}>
+                {this.state.data && this.state.data.length > 0 && (
+                  <>
+                    <MeterChart
+                      data={this.state.data}
+                      options={this.state.options}></MeterChart>
+                    <br />
+                    <br />
+                    <Button
+                      target="_blank"
+                      href="https://urldefense.proofpoint.com/v2/url?u=https-3A__join.slack.com_t_ai4bpm_shared-5Finvite_zt-2D1hcar007m-2D97CUY2F4PUK5BCmVddYZHg&d=DwMFaQ&c=jf_iaSHvJObTbx-siA1ZOg&r=lxDocy3Tofo6h1mjeOs7RQ&m=4otHwQCA9jC8-O_Cq5AWV1Bz1HI-VfVACocnpxf3VsbZgZl3LfCqtmY3BkMKWzF3&s=S9wWtM_n638mI8yiHJNBPVJzgYNlhNGY2fDIiKr_SP8&e="
+                      size="sm"
+                      kind="danger">
+                      Join us on Slack
+                    </Button>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <h4 style={{ marginTop: '100px' }}>Tentative Schedule</h4>
             <hr />
 
             <div className="bx--row">
@@ -305,14 +444,6 @@ class LandingPage extends React.Component {
               </div>
             </div>
 
-            <div className="bx--row">
-              {InvitedList.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Instructor props={item} />
-                </React.Fragment>
-              ))}
-            </div>
-
             <fieldset className="bx--col-lg-12 toolbox">
               <legend className="text-blue">
                 Featured Tools and System Demonstrations
@@ -326,6 +457,17 @@ class LandingPage extends React.Component {
                 ))}
               </div>
             </fieldset>
+
+            <h4 style={{ marginTop: '100px' }}>Confirmed Speakers</h4>
+            <hr />
+
+            <div className="bx--row">
+              {InvitedList.map((item, key) => (
+                <React.Fragment key={key}>
+                  <Instructor props={item} />
+                </React.Fragment>
+              ))}
+            </div>
 
             <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
             <hr />

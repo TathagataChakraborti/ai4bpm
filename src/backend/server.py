@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-
-import sys
 from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
 
 import argparse
 import json
 import os
+import sys
 
 import pymongo
 from pymongo import MongoClient
@@ -29,6 +27,21 @@ def __get_collection(db_name: str, collection_name: str):
     return collection
 
 
+def __get_data(collection):
+
+    keys = ["in-person", "dont-know", "hybrid"]
+    entries = {key: 0 for key in keys}
+    total = 0
+
+    cursor = collection.find({})
+    for document in cursor:
+        key = document["mode"]
+        entries[key] += 1
+        total += 1
+
+    return entries, total
+
+
 @app.route("/")
 def hello():
     return "Hello World. 9/07/22"
@@ -44,8 +57,19 @@ def register():
         collection = __get_collection(db_name, collection_name)
 
         if collection.count_documents({"_id": email}) == 0:
-            collection.insert_one({"_id": email, "mode": incoming_data.get("mode", None)})
-            return json.dumps({"success": True, "info": "Thank you for registering."})
+            collection.insert_one(
+                {"_id": email, "mode": incoming_data.get("mode", None)}
+            )
+
+            entries, number_of_entries = __get_data(collection)
+            return json.dumps(
+                {
+                    "success": True,
+                    "info": "Thank you for registering.",
+                    "count": number_of_entries,
+                    "entries": entries,
+                }
+            )
 
         else:
             return json.dumps({"success": False, "info": "Email already registered."})
@@ -61,10 +85,14 @@ def fetch():
     try:
 
         collection = __get_collection(db_name, collection_name)
-        number_of_entries = collection.count_documents({})
+        entries, number_of_entries = __get_data(collection)
+
         app.logger.info(db_name)
         app.logger.info(f"number retrieved is {number_of_entries}")
-        return json.dumps({"success": True, "info": number_of_entries})
+
+        return json.dumps(
+            {"success": True, "count": number_of_entries, "entries": entries}
+        )
 
     except Exception as e:
         print(e, sys.stdout)
@@ -79,8 +107,7 @@ if __name__ == "__main__":
     parser.add_argument("--cluster", type=str, help="Cluster Name.")
     parser.add_argument("--db", type=str, help="Database Name.")
     parser.add_argument("--collection", type=str, help="Collection Name.")
-    parser.add_argument("--env", action="store_true",
-                        help="Set environment variables.")
+    parser.add_argument("--env", action="store_true", help="Set environment variables.")
 
     args = parser.parse_args()
 
@@ -88,7 +115,7 @@ if __name__ == "__main__":
         CONFIG = CONFIG.format(
             username=os.getenv("MONGODB_USERNAME"),
             password=os.getenv("MONGODB_PASSWORD"),
-            cluster_name=os.getenv("MONGODB_CLUSTER_NAME")
+            cluster_name=os.getenv("MONGODB_CLUSTER_NAME"),
         )
         db_name = os.getenv("MONGODB_DB_NAME")
         collection_name = os.getenv("MONGODB_COLLECTION_NAME")
@@ -101,11 +128,11 @@ if __name__ == "__main__":
     else:
         config = json.loads(open("config.json").read())
         CONFIG = CONFIG.format(
-            username=config["username"], password=config["password"], cluster_name=config["cluster_name"]
+            username=config["username"],
+            password=config["password"],
+            cluster_name=config["cluster_name"],
         )
         db_name = config["db_name"]
         collection_name = config["collection_name"]
-
-        collection = __get_collection(db_name, collection_name)
 
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 3456)))
