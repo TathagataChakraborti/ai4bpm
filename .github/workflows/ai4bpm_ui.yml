@@ -21,7 +21,7 @@ jobs:
           sudo apt install -y nodejs npm
           node -v
           sudo npm install -g n
-          sudo n 13.14.0
+          sudo n 14.19.1
           node -v
           sudo npm install -g yarn
       - name: Install node dependencies
