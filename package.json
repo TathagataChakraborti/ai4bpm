@@ -6,7 +6,7 @@
   "bugs": "git@github.com:Tathagata-Chakraborti/ai4bpm/issues",
   "license": "MIT",
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "ci-check": "yarn format:diff",
     "clean": "yarn cache clean && yarn install",
     "eject": "react-scripts eject",
