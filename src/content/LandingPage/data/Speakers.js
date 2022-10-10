@@ -36,6 +36,13 @@ const InvitedList = [
   },
   {
     id: 4,
+    name: 'Giuseppe De Giacomo',
+    affiliation: 'Sapienza Università di Roma',
+    link: 'http://www.diag.uniroma1.it/degiacom/',
+    image: 'giuseppe',
+  },
+  {
+    id: 5,
     name: 'Many More to Come!',
     affiliation: '',
     image: 'default',

@@ -20,6 +20,12 @@ const SisterVenues = [
     text: 'ICAPS Workshop Series on Planning for Financial Services',
     image: 'icaps',
   },
+  {
+    link: 'https://edocconference.org/2022/panels#augmented-process-panel',
+    text:
+      'EDOC 2022 Panel on Augmented Process Management and Enterprise Information Systers',
+    image: 'edoc',
+  },
 ];
 
 export { SisterVenues };

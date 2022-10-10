@@ -38,8 +38,7 @@ const TeamList = [
   {
     id: 5,
     name: 'Chiara Di Francescomarino',
-    affiliation: 'Fondazione Bruno Kessler',
-    link: 'https://ict.fbk.eu/people/detail/chiara-di-francescomarino',
+    affiliation: 'University of Trento',
     image: 'chiara',
   },
 ];

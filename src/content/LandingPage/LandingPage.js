@@ -21,10 +21,14 @@ import {
   ProgressStep,
   ProgressIndicator,
   ToastNotification,
+  FormGroup,
+  RadioButtonGroup,
+  RadioButton,
 } from 'carbon-components-react';
 
+const DEFAULT_MODE = 'in-person';
+
 const TeamListShuffled = shuffleArray(TeamList);
-const SisterVenuesShuffled = shuffleArray(SisterVenues);
 const link_to_database =
   'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
 
@@ -36,6 +40,7 @@ class LandingPage extends React.Component {
       registered: false,
       register_count: 0,
       email: '',
+      mode: DEFAULT_MODE,
     };
   }
 
@@ -61,6 +66,13 @@ class LandingPage extends React.Component {
       .catch(error => {});
   };
 
+  handleSelectionChange = e => {
+    this.setState({
+      ...this.state,
+      mode: e,
+    });
+  };
+
   handleInputChange = e => {
     this.setState({
       ...this.state,
@@ -74,6 +86,7 @@ class LandingPage extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: this.state.email,
+        mode: this.state.mode,
       }),
     };
 
@@ -114,7 +127,7 @@ class LandingPage extends React.Component {
           <div
             className="bx--grid bx--grid--full-width container"
             style={{ paddingTop: '50px' }}>
-            <h1 className="text-blue">AAAI 2023 Bridge Proposal on</h1>
+            <h1 className="text-blue">AAAI 2023 Bridge on</h1>
             <h1 className="title">
               Artificial Intelligence and Business Process Management
             </h1>
@@ -179,6 +192,33 @@ class LandingPage extends React.Component {
 
                   <br />
                   <br />
+                  <FormGroup legendText="How do you plan to attend the conference?">
+                    <RadioButtonGroup
+                      onChange={this.handleSelectionChange.bind(this)}
+                      defaultSelected={DEFAULT_MODE}
+                      legend="How do you plan to attend the conference?"
+                      name="radio-hybrid"
+                      valueSelected={this.state.mode}
+                      orientation="horizontal"
+                      labelPosition="right">
+                      <RadioButton
+                        id="radio-1"
+                        labelText="In person"
+                        value="in-person"
+                      />
+                      <RadioButton
+                        id="radio-2"
+                        labelText="Online"
+                        value="hybrid"
+                      />
+                      <RadioButton
+                        id="radio-3"
+                        labelText="Not sure yet"
+                        value="dont-know"
+                      />
+                    </RadioButtonGroup>
+                  </FormGroup>
+
                   <Button
                     kind="primary"
                     size="sm"
@@ -224,16 +264,12 @@ class LandingPage extends React.Component {
                 <ProgressIndicator vertical currentIndex={1}>
                   <ProgressStep
                     current
-                    label={
+                    label="Call for Participation"
+                    secondaryLabel={
                       <>
-                        <span style={{ color: 'Blue' }}>Proposal Stage </span>
+                        <span style={{ color: 'Blue' }}>Coming soon</span>
                       </>
                     }
-                    secondaryLabel="Sept 23, 2022"
-                  />
-                  <ProgressStep
-                    label="Call for Participation"
-                    secondaryLabel="Oct 7, 2022"
                   />
                   <ProgressStep
                     label="Submissions Due"
@@ -245,7 +281,7 @@ class LandingPage extends React.Component {
                   />
                   <ProgressStep
                     label="AI4BPM at AAAI 2023"
-                    secondaryLabel="Feb 7-8, 2022"
+                    secondaryLabel="Feb 7-8, 2023"
                   />
                 </ProgressIndicator>
               </div>
@@ -324,7 +360,7 @@ class LandingPage extends React.Component {
                 ))}
               </StructuredListBody>
 
-              {SisterVenuesShuffled.map((item, key) => (
+              {SisterVenues.map((item, key) => (
                 <React.Fragment key={key}>
                   <Resource props={item} />
                 </React.Fragment>

@@ -16,7 +16,6 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config["CORS_HEADERS"] = "Content-Type"
 CONFIG = "mongodb://{username}:{password}@{cluster_name}.mongodb.net:27017,ac-c3yhnb1-shard-00-01.ix0jn6h.mongodb.net:27017,ac-c3yhnb1-shard-00-02.ix0jn6h.mongodb.net:27017/?ssl=true&replicaSet=atlas-e2298v-shard-0&authSource=admin&retryWrites=true&w=majority"
-# CONFIG = "mongodb+srv://{username}:{password}@{cluster_name}.ix0jn6h.mongodb.net/?retryWrites=true&w=majority"
 db_name = None
 collection_name = None
 
@@ -45,7 +44,7 @@ def register():
         collection = __get_collection(db_name, collection_name)
 
         if collection.count_documents({"_id": email}) == 0:
-            collection.insert_one({"_id": email})
+            collection.insert_one({"_id": email, "mode": incoming_data.get("mode", None)})
             return json.dumps({"success": True, "info": "Thank you for registering."})
 
         else:
@@ -106,5 +105,7 @@ if __name__ == "__main__":
         )
         db_name = config["db_name"]
         collection_name = config["collection_name"]
+
+        collection = __get_collection(db_name, collection_name)
 
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 3456)))
