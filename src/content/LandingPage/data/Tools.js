@@ -17,7 +17,18 @@ const Tools = [
     code: 'https://github.com/IBM/nl2ltl',
   },
   {
-    description: 'Contribute yours through the open call.',
+    name: 'Declare4Py',
+    description: 'A python package for process-mining with DECLARE models.',
+    code: 'https://github.com/francxx96/declare4py',
+  },
+  {
+    name: 'RuM',
+    description: 'Rule Mining Made Simple.',
+    code: 'https://bitbucket.org/doorless1634/thesis/src/master',
+    home: 'https://rulemining.org',
+  },
+  {
+    description: 'Contribute yours through the open call for demos.',
   },
 ];
 

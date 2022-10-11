@@ -32,10 +32,11 @@ import {
 } from 'carbon-components-react';
 
 const DEFAULT_MODE = 'in-person';
-
-const TeamListShuffled = shuffleArray(TeamList);
 const link_to_database =
   'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
+
+const TeamListShuffled = shuffleArray(TeamList);
+const ToolsShuffled = shuffleArray(Tools.splice(0, Tools.length - 1));
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -452,11 +453,18 @@ class LandingPage extends React.Component {
               </legend>
 
               <div className="bx--row">
-                {Tools.map((item, key) => (
-                  <React.Fragment key={key}>
-                    <Tool props={item} />
-                  </React.Fragment>
-                ))}
+                <div className="bx--col-lg-14">
+                  <div className="bx--row">
+                    {ToolsShuffled.map((item, key) => (
+                      <React.Fragment key={key}>
+                        <Tool props={item} />
+                      </React.Fragment>
+                    ))}
+                    <React.Fragment key={Tools.length}>
+                      <Tool props={Tools[0]} />
+                    </React.Fragment>
+                  </div>
+                </div>
               </div>
             </fieldset>
 
