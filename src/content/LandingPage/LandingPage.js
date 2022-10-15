@@ -192,20 +192,12 @@ class LandingPage extends React.Component {
             <div className="bx--row">
               <div className="bx--col-lg-12">
                 <p>
-                  The AI4BPM Bridge at AAAI 2023 hopes to bring together
-                  academics and industry professionals working at the
-                  intersection of artificial intelligence and business process
-                  management under the same roof. The event will include
-                  invitied talks, contributed talks, poster sessions, student
-                  outreach, meet and mingle opportunities, hands-on system
-                  demonstrations, tutorials, and much more! Learn more about the
-                  first ever bridge program at AAAI{' '}
-                  <Link
-                    href="https://aaai.org/Conferences/AAAI-23/bridge-program-call"
-                    target="_blank">
-                    here
-                  </Link>
-                  .
+                  The AI4BPM Bridge at AAAI 2023 brings together academics and
+                  industry professionals working at the intersection of
+                  artificial intelligence and business process management under
+                  the same roof. The event will include invitied talks, poster
+                  sessions, tutorials, student outreach, meet and mingle
+                  opportunities, hands-on system demonstrations, and much more!
                 </p>
 
                 <br />
@@ -323,18 +315,16 @@ class LandingPage extends React.Component {
                     </div>
                     <ButtonSet style={{ marginTop: '30px' }}>
                       <Button
-                        disabled
                         target="_blank"
-                        href=""
+                        href="/shared/call.pdf"
                         size="sm"
                         kind="secondary"
                         className="call-button">
                         Read the Full Call
                       </Button>
                       <Button
-                        disabled
                         target="_blank"
-                        href=""
+                        href="https://easychair.org/conferences/submission_new?a=29756028"
                         size="sm"
                         kind="primary"
                         className="call-button">
@@ -356,13 +346,17 @@ class LandingPage extends React.Component {
                     label="Call for Contributions"
                     secondaryLabel={
                       <>
-                        <span style={{ color: 'Blue' }}>Coming soon</span>
+                        <span style={{ color: 'Blue' }}>Active</span>
                       </>
                     }
                   />
                   <ProgressStep
                     label="Submissions Due"
-                    secondaryLabel="Nov 18, 2022"
+                    secondaryLabel={
+                      <>
+                        <span style={{ color: 'Red' }}>Nov 18, 2022</span>
+                      </>
+                    }
                   />
                   <ProgressStep
                     label="Author Notifications"
@@ -481,6 +475,15 @@ class LandingPage extends React.Component {
 
             <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
             <hr />
+            <Button
+              target="_blank"
+              href="mailto::ai4bpm-aaai@easychair.org"
+              size="sm"
+              kind="primary">
+              Contact
+            </Button>
+            <br />
+            <br />
 
             <div className="bx--row">
               {TeamListShuffled.map((item, key) => (

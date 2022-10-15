@@ -12,7 +12,6 @@ const TeamList = [
     affiliation: 'IBM Research',
     link: 'http://tchakra2.com',
     image: 'tathagata',
-    contact: 'tchakra2@ibm.com',
   },
   {
     id: 2,
