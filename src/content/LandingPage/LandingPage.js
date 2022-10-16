@@ -15,7 +15,6 @@ import {
 import '@carbon/charts/styles.css';
 import { MeterChart } from '@carbon/charts-react';
 import {
-  StructuredListBody,
   Tile,
   ButtonSet,
   Button,
@@ -29,6 +28,11 @@ import {
   RadioButton,
   UnorderedList,
   ListItem,
+  StructuredListWrapper,
+  StructuredListBody,
+  StructuredListHead,
+  StructuredListRow,
+  StructuredListCell,
 } from 'carbon-components-react';
 
 const DEFAULT_MODE = 'in-person';
@@ -173,7 +177,7 @@ class LandingPage extends React.Component {
       <div className="bx--row">
         <div
           className="bx--col-lg-10"
-          style={{ paddingBottom: '100px', backgroundColor: '#f4f4f4' }}>
+          style={{ backgroundColor: '#f4f4f4', paddingRight: '0' }}>
           <div
             className="bx--grid bx--grid--full-width container"
             style={{ paddingTop: '50px' }}>
@@ -296,7 +300,7 @@ class LandingPage extends React.Component {
                         <ListItem style={{ marginTop: '10px' }}>
                           <strong>System demonstrations:</strong> The poster
                           session will also feature live system demonstrations
-                          of tools and softwares that are useful to both AI and
+                          of tools and software that are useful to both AI and
                           BPM communities. Treat this as a demonstration
                           submission to a conference, but specifically on the AI
                           x BPM topic.
@@ -370,7 +374,9 @@ class LandingPage extends React.Component {
               </div>
             </div>
 
-            <hr />
+            <br />
+            <br />
+            <br />
 
             <div className="bx--row">
               <div className="bx--col-lg-10">
@@ -431,13 +437,85 @@ class LandingPage extends React.Component {
                 <Tile
                   style={{ backgroundColor: '#fafafa', marginBottom: '20px' }}>
                   <p>
-                    More details of the program, including new speakers,
-                    tutorials, and featured tools for system demonstrations,
-                    will be announced in due course. Make sure to register your
-                    interest above, to get a notification when the event is
-                    confirmed.
+                    The following is a{' '}
+                    <span style={{ color: 'red' }}>tentative</span> schedule.
+                    More details, including speakers, tutorials, and featured
+                    tools for system demonstrations, will be announced soon.
+                    Make sure to register your interest above, to get a
+                    notification when the event is confirmed.
                   </p>
                 </Tile>
+              </div>
+            </div>
+
+            <div className="bx--row">
+              <div className="bx--col-lg-16">
+                <StructuredListWrapper ariaLabel="Structured list">
+                  <StructuredListHead>
+                    <StructuredListRow head>
+                      <StructuredListCell head>Day 1</StructuredListCell>
+                      <StructuredListCell head>Feb 7, 2023</StructuredListCell>
+                    </StructuredListRow>
+                  </StructuredListHead>
+                  <StructuredListBody>
+                    <StructuredListRow>
+                      <StructuredListCell>8:00 - 15:00 EST</StructuredListCell>
+                      <StructuredListCell>Half-Day Tutorial</StructuredListCell>
+                      <StructuredListCell>
+                        Topics on Artificial Intelligence and Business Process
+                        Management, Process Modeling, Process Mining and
+                        Discovery, Prediction, and Conformance Checking, with
+                        applications to Robotic Process Automation, Web Service
+                        Composition, and so on.
+                      </StructuredListCell>
+                    </StructuredListRow>
+                    <StructuredListRow>
+                      <StructuredListCell>15:30 - 17:00 EST</StructuredListCell>
+                      <StructuredListCell>
+                        Poster and Demo Session
+                      </StructuredListCell>
+                      <StructuredListCell>
+                        Extended meet-and-greet session around contributed
+                        posters, student contributions, and highlighted tools
+                        and software for AI4BPM practitioners.
+                      </StructuredListCell>
+                    </StructuredListRow>
+                  </StructuredListBody>
+                  <StructuredListHead>
+                    <StructuredListRow head>
+                      <StructuredListCell head>Day 2</StructuredListCell>
+                      <StructuredListCell head>Feb 8, 2023</StructuredListCell>
+                    </StructuredListRow>
+                  </StructuredListHead>
+                  <StructuredListBody>
+                    <StructuredListRow>
+                      <StructuredListCell>8:00 - 14:30 EST</StructuredListCell>
+                      <StructuredListCell>Invited Talks</StructuredListCell>
+                      <StructuredListCell>
+                        Final list of speakers will be announced soon.
+                      </StructuredListCell>
+                    </StructuredListRow>
+                    <StructuredListRow>
+                      <StructuredListCell>15:00 - 16:00 EST</StructuredListCell>
+                      <StructuredListCell>Breakout Sessions</StructuredListCell>
+                      <StructuredListCell>
+                        This will be an activity session with the audience
+                        exploring topics of interest, blindspots, limitations,
+                        and challenge tasks on the AI4BPM theme.
+                      </StructuredListCell>
+                    </StructuredListRow>
+                    <StructuredListRow>
+                      <StructuredListCell>16:00 - 17:00 EST</StructuredListCell>
+                      <StructuredListCell>Panel Discussion</StructuredListCell>
+                      <StructuredListCell>
+                        Panelists will continue the discussion from the breakout
+                        sessions and conclude with calls to action for the
+                        AI4BPM community on exciting research opportunities
+                        ahead.
+                      </StructuredListCell>
+                    </StructuredListRow>
+                  </StructuredListBody>
+                </StructuredListWrapper>
               </div>
             </div>
 
@@ -493,6 +571,8 @@ class LandingPage extends React.Component {
               ))}
             </div>
           </div>
+
+          <img src="/images/bridge.png" width="100%" alt="bridge" />
         </div>
 
         <div className="bx--col-lg-6">
