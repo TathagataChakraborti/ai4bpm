@@ -199,7 +199,7 @@ class LandingPage extends React.Component {
                   The AI4BPM Bridge at AAAI 2023 brings together academics and
                   industry professionals working at the intersection of
                   artificial intelligence and business process management under
-                  the same roof. The event will include invitied talks, poster
+                  the same roof. The event will include invited talks, poster
                   sessions, tutorials, student outreach, meet and mingle
                   opportunities, hands-on system demonstrations, and much more!
                 </p>
@@ -519,10 +519,39 @@ class LandingPage extends React.Component {
               </div>
             </div>
 
-            <fieldset className="bx--col-lg-12 toolbox">
+            <h4>Confirmed Speakers</h4>
+            <hr />
+
+            <div className="bx--row">
+              {InvitedList.map((item, key) => (
+                <React.Fragment key={key}>
+                  <Instructor props={item} />
+                </React.Fragment>
+              ))}
+            </div>
+
+            <fieldset
+              style={{ marginTop: '100px' }}
+              className="bx--col-lg-12 toolbox">
               <legend className="text-blue">
                 Featured Tools and System Demonstrations
               </legend>
+
+              <div className="bx--row">
+                <div className="bx--col-lg-16">
+                  <Tile
+                    style={{
+                      backgroundColor: '#fafafa',
+                      marginBottom: '20px',
+                    }}>
+                    <p>
+                      This is a list of featured tools and software that the
+                      AI4BPM community may find useful. If you see something
+                      missing, drop us a line. <span role="img">&#x1f917</span>;
+                    </p>
+                  </Tile>
+                </div>
+              </div>
 
               <div className="bx--row">
                 <div className="bx--col-lg-14">
@@ -539,17 +568,6 @@ class LandingPage extends React.Component {
                 </div>
               </div>
             </fieldset>
-
-            <h4 style={{ marginTop: '100px' }}>Confirmed Speakers</h4>
-            <hr />
-
-            <div className="bx--row">
-              {InvitedList.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Instructor props={item} />
-                </React.Fragment>
-              ))}
-            </div>
 
             <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
             <hr />

@@ -143,8 +143,7 @@ const Instructor = props => {
             )}
 
             {!props.props.link && <span>{props.props.name}</span>}
-
-            <h6>{props.props.affiliation}</h6>
+            {props.props.affiliation && <h6>{props.props.affiliation}</h6>}
           </div>
         </div>
       </Tile>

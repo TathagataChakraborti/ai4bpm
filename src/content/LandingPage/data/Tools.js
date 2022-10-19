@@ -28,6 +28,17 @@ const Tools = [
     home: 'https://rulemining.org',
   },
   {
+    name: 'aBPR',
+    description: 'A tool for Assisted Business Process Redesign.',
+    code: 'https://github.com/dtdi/assisted-bpr-modeler',
+    home: 'https://dtdi.github.io/assisted-bpr-modeler',
+  },
+  {
+    name: 'BPMN Redrawer',
+    description: 'A tool for redrawing BPMN models from images.',
+    home: 'http://pros.unicam.it/bpmn-redrawer-tool',
+  },
+  {
     description: 'Contribute yours through the open call for demos.',
   },
 ];
