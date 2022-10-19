@@ -30,7 +30,8 @@
     "react-router-dom": "^5.0.0",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "2.1.8",
-    "copy-to-clipboard": "3.3.1"
+    "copy-to-clipboard": "3.3.1",
+    "react-twitter-widgets": "1.11.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",

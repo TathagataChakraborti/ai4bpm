@@ -4,6 +4,7 @@ import { InvitedList } from './data/Speakers';
 import { TeamList } from './data/Team';
 import { SisterVenues } from './data/SisterVenues';
 import { Tools } from './data/Tools';
+import { Timeline } from 'react-twitter-widgets';
 import {
   Reference,
   Instructor,
@@ -547,7 +548,10 @@ class LandingPage extends React.Component {
                     <p>
                       This is a list of featured tools and software that the
                       AI4BPM community may find useful. If you see something
-                      missing, drop us a line. <span role="img">&#x1f917</span>;
+                      missing, drop us a line.{' '}
+                      <span aria-label="hugging face" role="img">
+                        &#x1f917;
+                      </span>
                     </p>
                   </Tile>
                 </div>
@@ -604,7 +608,7 @@ class LandingPage extends React.Component {
             }}>
             <img src="/logo.png" alt="logo" width="90%" />
 
-            <div style={{ marginTop: '50px', marginBottom: '150px' }}>
+            <div style={{ marginTop: '50px', marginBottom: '50px' }}>
               <StructuredListBody>
                 {ReferenceList.map((item, key) => (
                   <React.Fragment key={key}>
@@ -618,6 +622,19 @@ class LandingPage extends React.Component {
                   <Resource props={item} />
                 </React.Fragment>
               ))}
+            </div>
+
+            <div className="bx--col-lg-16">
+              <Timeline
+                dataSource={{
+                  sourceType: 'url',
+                  url:
+                    'https://twitter.com/tchakra2/timelines/1582756937313456128?ref_src=twsrc%5Etfw',
+                }}
+                options={{
+                  height: '2500',
+                }}
+              />
             </div>
 
             <img
