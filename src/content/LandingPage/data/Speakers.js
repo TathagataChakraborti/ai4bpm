@@ -42,6 +42,17 @@ const InvitedList = [
     image: 'rama',
   },
   {
+    name: 'Chiara Ghidini',
+    affiliation: 'Fondazione Bruno Kessler',
+    link: 'https://pdi.fbk.eu/ghidini',
+    image: 'chiara-g',
+  },
+  {
+    name: 'Fabrizio Maggi',
+    affiliation: 'Free University of Bozen-Bolzano',
+    image: 'fabrizio',
+  },
+  {
     name: 'Many More to Come!',
     image: 'default',
   },
