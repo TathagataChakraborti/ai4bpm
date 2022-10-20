@@ -39,7 +39,10 @@ const Tools = [
     home: 'http://pros.unicam.it/bpmn-redrawer-tool',
   },
   {
-    description: 'Contribute yours through the open call for demos.',
+    name: 'Nirdizati',
+    description: 'A Web application for Predictive Process Monitoring.',
+    code: 'https://github.com/nirdizati-research',
+    home: 'http://research.nirdizati.org',
   },
 ];
 

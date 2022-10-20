@@ -37,11 +37,14 @@ import {
 } from 'carbon-components-react';
 
 const DEFAULT_MODE = 'in-person';
+const link_to_slack =
+  'https://urldefense.proofpoint.com/v2/url?u=https-3A__join.slack.com_t_ai4bpm_shared-5Finvite_zt-2D1hcar007m-2D97CUY2F4PUK5BCmVddYZHg&d=DwMFaQ&c=jf_iaSHvJObTbx-siA1ZOg&r=lxDocy3Tofo6h1mjeOs7RQ&m=4otHwQCA9jC8-O_Cq5AWV1Bz1HI-VfVACocnpxf3VsbZgZl3LfCqtmY3BkMKWzF3&s=S9wWtM_n638mI8yiHJNBPVJzgYNlhNGY2fDIiKr_SP8&e=';
+const link_to_call = '/shared/call.pdf';
 const link_to_database =
   'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
 
 const TeamListShuffled = shuffleArray(TeamList);
-const ToolsShuffled = shuffleArray(Tools.splice(0, Tools.length - 1));
+const ToolsShuffled = shuffleArray(Tools);
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -321,7 +324,7 @@ class LandingPage extends React.Component {
                     <ButtonSet style={{ marginTop: '30px' }}>
                       <Button
                         target="_blank"
-                        href="/shared/call.pdf"
+                        href={link_to_call}
                         size="sm"
                         kind="secondary"
                         className="call-button">
@@ -420,7 +423,7 @@ class LandingPage extends React.Component {
                     <br />
                     <Button
                       target="_blank"
-                      href="https://urldefense.proofpoint.com/v2/url?u=https-3A__join.slack.com_t_ai4bpm_shared-5Finvite_zt-2D1hcar007m-2D97CUY2F4PUK5BCmVddYZHg&d=DwMFaQ&c=jf_iaSHvJObTbx-siA1ZOg&r=lxDocy3Tofo6h1mjeOs7RQ&m=4otHwQCA9jC8-O_Cq5AWV1Bz1HI-VfVACocnpxf3VsbZgZl3LfCqtmY3BkMKWzF3&s=S9wWtM_n638mI8yiHJNBPVJzgYNlhNGY2fDIiKr_SP8&e="
+                      href={link_to_slack}
                       size="sm"
                       kind="danger">
                       Join us on Slack
@@ -548,7 +551,16 @@ class LandingPage extends React.Component {
                     <p>
                       This is a list of featured tools and software that the
                       AI4BPM community may find useful. If you see something
-                      missing, drop us a line.{' '}
+                      missing, please drop us a line on our{' '}
+                      <Link href={link_to_slack} target="_blank">
+                        Slack
+                      </Link>
+                      . If you want to contribute yours to the AAAI 2023 AI4BPM
+                      program, please check out the{' '}
+                      <Link href={link_to_call} target="_blank">
+                        open call for demos
+                      </Link>
+                      .{' '}
                       <span aria-label="hugging face" role="img">
                         &#x1f917;
                       </span>
@@ -565,9 +577,6 @@ class LandingPage extends React.Component {
                         <Tool props={item} />
                       </React.Fragment>
                     ))}
-                    <React.Fragment key={Tools.length}>
-                      <Tool props={Tools[0]} />
-                    </React.Fragment>
                   </div>
                 </div>
               </div>
