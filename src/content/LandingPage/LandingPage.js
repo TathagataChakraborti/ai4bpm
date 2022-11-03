@@ -324,21 +324,31 @@ class LandingPage extends React.Component {
                     <ButtonSet style={{ marginTop: '30px' }}>
                       <Button
                         target="_blank"
+                        href="https://easychair.org/conferences/submission_new?a=29869340"
+                        size="sm"
+                        kind="primary"
+                        className="call-button">
+                        Submit on EasyChair
+                      </Button>
+                      <Button
+                        target="_blank"
                         href={link_to_call}
                         size="sm"
                         kind="secondary"
                         className="call-button">
                         Read the Full Call
                       </Button>
-                      <Button
-                        target="_blank"
-                        href="https://easychair.org/conferences/submission_new?a=29756028"
-                        size="sm"
-                        kind="primary"
-                        className="call-button">
-                        Submit on EasyChair
-                      </Button>
                     </ButtonSet>
+                    <br />
+                    <div className="bx--row">
+                      <div
+                        className="bx--col-lg-12"
+                        style={{ fontSize: 'smaller', lineHeight: 'normal' }}>
+                        You need to log into EasyChair to submit. If you are
+                        unable to find the submission link, please log into
+                        EasyChair first and then click the above link again.
+                      </div>
+                    </div>
                   </div>
 
                   <br />
