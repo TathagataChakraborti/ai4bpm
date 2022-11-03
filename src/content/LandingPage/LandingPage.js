@@ -324,7 +324,7 @@ class LandingPage extends React.Component {
                     <ButtonSet style={{ marginTop: '30px' }}>
                       <Button
                         target="_blank"
-                        href="https://easychair.org/conferences/submission_new?a=29869340"
+                        href="https://easychair.org/my/conference?conf=ai4bpm0"
                         size="sm"
                         kind="primary"
                         className="call-button">
