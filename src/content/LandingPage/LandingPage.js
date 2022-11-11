@@ -320,8 +320,18 @@ class LandingPage extends React.Component {
                           conference, but specifically on the AI x BPM topic.
                         </ListItem>
                       </UnorderedList>
+                      <div style={{ lineHeight: 'normal', marginTop: '10px' }}>
+                        Submissions should use the AAAI style files available{' '}
+                        <Link
+                          href="https://www.aaai.org/Publications/Templates/AnonymousSubmission23.zip"
+                          target="_blank">
+                          here
+                        </Link>
+                        . References and acknowledgements do not count within
+                        the 2-page limit.
+                      </div>
                     </div>
-                    <ButtonSet style={{ marginTop: '30px' }}>
+                    <ButtonSet style={{ marginTop: '20px' }}>
                       <Button
                         target="_blank"
                         href="https://easychair.org/my/conference?conf=ai4bpm0"
