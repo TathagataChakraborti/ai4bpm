@@ -44,6 +44,19 @@ const Tools = [
     code: 'https://github.com/nirdizati-research',
     home: 'http://research.nirdizati.org',
   },
+  {
+    name: 'delta-BPMN',
+    description: 'Modelling of data-aware, block-structured BPMN models.',
+    code: 'https://github.com/mrMorningLemon/delta-BPMN',
+    home: 'https://link.springer.com/chapter/10.1007/978-3-030-85469-0_13',
+  },
+  {
+    name: 'CoCoMoT',
+    description:
+      'Conformance checking of data Petri nets (DPNs) by an SMT encoding.',
+    code: 'https://github.com/bytekid/cocomot',
+    home: 'https://link.springer.com/chapter/10.1007/978-3-030-85469-0_15',
+  },
 ];
 
 export { Tools };

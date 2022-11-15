@@ -327,8 +327,8 @@ class LandingPage extends React.Component {
                           target="_blank">
                           here
                         </Link>
-                        . References and acknowledgements do not count within
-                        the 2-page limit.
+                        . Submissions may be single-blind. References and
+                        acknowledgements do not count within the 2-page limit.
                       </div>
                     </div>
                     <ButtonSet style={{ marginTop: '20px' }}>
