@@ -382,7 +382,9 @@ class LandingPage extends React.Component {
                     label="Submissions Due"
                     secondaryLabel={
                       <>
-                        <span style={{ color: 'Red' }}>Nov 18, 2022</span>
+                        <span style={{ color: 'Red' }}>
+                          Nov 28, 2022 UTC-12
+                        </span>
                       </>
                     }
                   />
