@@ -15,6 +15,7 @@ const Tools = [
     name: 'NL2LTL',
     description: 'Natural language to linear temporal logic.',
     code: 'https://github.com/IBM/nl2ltl',
+    home: 'https://francescofuggitti.github.io/papers/2023/aaai2023fc.pdf',
   },
   {
     name: 'Declare4Py',
@@ -56,6 +57,18 @@ const Tools = [
       'Conformance checking of data Petri nets (DPNs) by an SMT encoding.',
     code: 'https://github.com/bytekid/cocomot',
     home: 'https://link.springer.com/chapter/10.1007/978-3-030-85469-0_15',
+  },
+  {
+    name: 'TimeAwareBPMN',
+    description: 'A graphical web-based editor for time-aware BPMN models.',
+    code: 'https://gitlab.com/univr.di/TimeAwareBPMN',
+    home: 'https://doi.org/10.1016/j.softx.2021.100939',
+  },
+  {
+    name: 'BPMN Visualization',
+    description: 'Process Analytics components for your web pages.',
+    code: 'https://github.com/process-analytics',
+    home: 'https://process-analytics.dev',
   },
 ];
 
