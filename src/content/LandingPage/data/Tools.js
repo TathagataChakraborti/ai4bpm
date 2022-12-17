@@ -70,6 +70,16 @@ const Tools = [
     code: 'https://github.com/process-analytics',
     home: 'https://process-analytics.dev',
   },
+  {
+    name: 'ODM',
+    description: 'Operational Decision Manager for Containers.',
+    code: 'https://github.com/DecisionsDev/odm-for-container-getting-started',
+  },
+  {
+    name: 'BSPL',
+    description: 'Blindingly Simple Protocol Language.',
+    code: 'https://gitlab.com/masr/bspl',
+  },
 ];
 
 export { Tools };

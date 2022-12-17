@@ -6,6 +6,8 @@ import {
   Header,
   HeaderName,
   SkipToContent,
+  HeaderNavigation,
+  HeaderMenuItem,
 } from 'carbon-components-react/lib/components/UIShell';
 
 class PageHeader extends React.Component {
@@ -24,6 +26,27 @@ class PageHeader extends React.Component {
               <HeaderName element={Link} to="/" prefix="AAAI 2023">
                 Bridge Program
               </HeaderName>
+              }
+              <HeaderNavigation aria-label="Tools">
+                <HeaderMenuItem
+                  element={Link}
+                  to="/tools"
+                  className="pink-diminish">
+                  Tools
+                </HeaderMenuItem>
+                <HeaderMenuItem
+                  element={Link}
+                  to="/posters"
+                  className="blue-diminish">
+                  Posters
+                </HeaderMenuItem>
+                <HeaderMenuItem
+                  element={Link}
+                  to="/program"
+                  className="green-diminish">
+                  Program
+                </HeaderMenuItem>
+              </HeaderNavigation>
             </Header>
           </>
         )}

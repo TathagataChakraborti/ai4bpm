@@ -2,6 +2,10 @@
   display: block;
 }
 
+.bx--header {
+  border: none;
+}
+
 .disabled-hover > a:hover {
   cursor: not-allowed !important;
 }
@@ -43,4 +47,18 @@ a.bx--side-nav__link--current {
 .bx--side-nav__item--active
   .bx--side-nav__submenu[aria-expanded='false']::before {
   background-color: red;
+}
+
+.pink-diminish > a {
+  background-color: #d02771;
+  color: white !important;
+}
+
+.blue-diminish > a {
+  background-color: #1363fe;
+  color: white;
+}
+.green-diminish > a {
+  background-color: #24a147;
+  color: white;
 }
