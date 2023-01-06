@@ -1,21 +1,16 @@
 import React from 'react';
-import { shuffleArray } from '../../components/Info';
 import { PostersList } from '../LandingPage/data/Posters';
-
 import {
-  Tag,
-  Tile,
-  Button,
-  ButtonSet,
-  ToastNotification,
-} from 'carbon-components-react';
+  shuffleArray,
+  generatePDFUrl,
+  generatePosterImageUrl,
+} from '../../components/Info';
+import { Tag, Tile, Button, ButtonSet } from 'carbon-components-react';
 
 const PostersListShuffled = shuffleArray(PostersList);
 
 const Poster = props => (
   <Tile className="bx--col-lg-3" style={{ padding: 0, margin: 10 }}>
-    <img src="/images/placeholder.png" width="100%" alt="thumbnail" />
-
     <div className="poster" style={{ padding: 15 }}>
       <div className="bx--row">
         <div className="bx--col-lg-16">
@@ -53,9 +48,9 @@ const Poster = props => (
       <div className="poster-links">
         <ButtonSet>
           <Button
-            disabled
             className="button-diminish"
             size="sm"
+            href={generatePDFUrl(props.props['#'])}
             target="_blank"
             kind="primary">
             Read
@@ -88,27 +83,6 @@ class PostersPage extends React.Component {
           <div
             className="bx--grid bx--grid--full-width container"
             style={{ backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
-            <br />
-
-            <div className="bx--row">
-              <div className="bx--col-lg-4">
-                <ToastNotification
-                  lowContrast
-                  kind="error"
-                  iconDescription="close button"
-                  subtitle={
-                    <span>
-                      This page is under construction. Missing details will be
-                      filled in soon after the final versions of the papers are
-                      in.
-                    </span>
-                  }
-                  timeout={0}
-                  title="Under Construction"
-                />
-              </div>
-            </div>
-
             <br />
 
             <div className="bx--row">

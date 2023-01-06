@@ -152,15 +152,6 @@ const PostersList = [
     Time: 'Nov 18, 15:15',
   },
   {
-    '#': 6261,
-    Authors: 'Roberto Posenato',
-    Title:
-      'TIMEAWAREBPMN-JS: An Editor and Temporal Verification Tool for Time-Aware BPMN Processes',
-    paper: '✔',
-    Track: 'AI4BPM EA',
-    Time: 'Nov 18, 15:02',
-  },
-  {
     '#': 7050,
     Authors:
       'Federico Chesani, Chiara Di Francescomarino, Chiara Ghidini, Daniela Loreti, Fabrizio Maria Maggi, Paola Mello, Marco Montali and Sergio Tessaris',

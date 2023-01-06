@@ -9,6 +9,14 @@ import {
   ClickableTile,
 } from 'carbon-components-react';
 
+function generatePDFUrl(id) {
+  return `${process.env.PUBLIC_URL}/posters/AI4BPM_paper_${id}.pdf`;
+}
+
+function generatePosterImageUrl(id) {
+  return `${process.env.PUBLIC_URL}/posters/${id}.png`;
+}
+
 function generateImageUrl(imageUrl) {
   return `${process.env.PUBLIC_URL}/images/${imageUrl}.png`;
 }
@@ -130,4 +138,12 @@ const Resource = props => (
   </div>
 );
 
-export { Instructor, Reference, Resource, shuffleArray };
+export {
+  Instructor,
+  Reference,
+  Resource,
+  shuffleArray,
+  generatePosterImageUrl,
+  generatePDFUrl,
+  generateImageUrl,
+};

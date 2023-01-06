@@ -203,15 +203,62 @@ class LandingPage extends React.Component {
                   sessions, tutorials, student outreach, meet and mingle
                   opportunities, hands-on system demonstrations, and much more!
                 </p>
-
-                <br />
-                <br />
-
-                <div className="bx--col-lg-12"></div>
               </div>
             </div>
 
+            <br />
+            <br />
+            <br />
+            <br />
+
             <div className="bx--row">
+              <div className="bx--col-lg-6">
+                {this.state.data && this.state.data.length > 0 && (
+                  <>
+                    <MeterChart
+                      data={this.state.data}
+                      options={this.state.options}></MeterChart>
+                    <br />
+                    <br />
+                    <Button
+                      target="_blank"
+                      href={link_to_slack}
+                      size="sm"
+                      kind="danger">
+                      Join us on Slack
+                    </Button>
+                  </>
+                )}
+
+                <br />
+                <br />
+                <ToastNotification
+                  lowContrast
+                  kind="info"
+                  style={{ width: '100%' }}
+                  caption={
+                    <Link
+                      href="https://twitter.com/tsitsulin_/status/1571082786181894146"
+                      target="_blank">
+                      Learn more
+                    </Link>
+                  }
+                  iconDescription="close button"
+                  subtitle={
+                    <span>
+                      We stand with the global AI community and recognize that
+                      most of the world cannot attend conferences in Europe and
+                      the USA. This disproportionately affects our black and
+                      brown colleagues. While we hope that you can attend in
+                      person if you can, in conversations with AAAI 2023, we
+                      commit to a hybrid format, until such time conferences can
+                      find more friendly hosts.
+                    </span>
+                  }
+                  timeout={0}
+                  title="Event Format"
+                />
+              </div>
               <div className="bx--col-lg-8">
                 <TextInput
                   light
@@ -277,53 +324,6 @@ class LandingPage extends React.Component {
                   }>
                   Register
                 </Button>
-              </div>
-              <div className="bx--col-lg-6">
-                {this.state.data && this.state.data.length > 0 && (
-                  <>
-                    <MeterChart
-                      data={this.state.data}
-                      options={this.state.options}></MeterChart>
-                    <br />
-                    <br />
-                    <Button
-                      target="_blank"
-                      href={link_to_slack}
-                      size="sm"
-                      kind="danger">
-                      Join us on Slack
-                    </Button>
-                  </>
-                )}
-
-                <br />
-                <br />
-                <ToastNotification
-                  lowContrast
-                  kind="info"
-                  style={{ width: '100%' }}
-                  caption={
-                    <Link
-                      href="https://twitter.com/tsitsulin_/status/1571082786181894146"
-                      target="_blank">
-                      Learn more
-                    </Link>
-                  }
-                  iconDescription="close button"
-                  subtitle={
-                    <span>
-                      We stand with the global AI community and recognize that
-                      most of the world cannot attend conferences in Europe and
-                      the USA. This disproportionately affects our black and
-                      brown colleagues. While we hope that you can attend in
-                      person if you can, in conversations with AAAI 2023, we
-                      commit to a hybrid format, until such time conferences can
-                      find more friendly hosts.
-                    </span>
-                  }
-                  timeout={0}
-                  title="Event Format"
-                />
               </div>
             </div>
 

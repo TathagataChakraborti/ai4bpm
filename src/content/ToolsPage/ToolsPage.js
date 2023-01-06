@@ -82,14 +82,12 @@ class ToolsPage extends React.Component {
                   <Tool props={item} />
                 </React.Fragment>
               ))}
-            </div>
 
-            <div className="bx--row">
-              <div className="bx--col-lg-4" style={{ marginTop: '50px' }}>
+              <div className="bx--col-lg-4" style={{ paddingRight: 0 }}>
                 <ToastNotification
                   lowContrast
                   kind="info"
-                  style={{ width: '100%' }}
+                  style={{ width: '100%', margin: 0 }}
                   caption={
                     <Link href={link_to_slack} target="_blank">
                       Join Slack
