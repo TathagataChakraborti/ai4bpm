@@ -1,10 +1,6 @@
 import React from 'react';
 import { PostersList } from '../LandingPage/data/Posters';
-import {
-  shuffleArray,
-  generatePDFUrl,
-  generatePosterImageUrl,
-} from '../../components/Info';
+import { shuffleArray, generatePDFUrl } from '../../components/Info';
 import { Tag, Tile, Button, ButtonSet } from 'carbon-components-react';
 
 const PostersListShuffled = shuffleArray(PostersList);
