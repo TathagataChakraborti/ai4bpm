@@ -192,20 +192,18 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>
                           14:45 - 15:15 EST
                         </StructuredListCell>
+                        <StructuredListCell>Session</StructuredListCell>
                         <StructuredListCell>
-                          Breakout Session
-                        </StructuredListCell>
-                        <StructuredListCell>
-                          Impact of Foundational Models on Business Process
-                          Management
-                          <br />
-                          <br />
-                          Moderator:{' '}
                           <Link
                             href="https://researcher.watson.ibm.com/researcher/view.php?person=ibm-yara.rizk"
                             target="_blank">
                             Yara Rizk
-                          </Link>
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Impact of Foundational Models on Business Process
+                            Management
+                          </span>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
