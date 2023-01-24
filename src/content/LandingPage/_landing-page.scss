@@ -5,8 +5,16 @@
 
 .call-button {
   margin-right: 10px;
-  width: 220px !important;
-  max-width: 220px !important;
+  width: 175px !important;
+  max-width: 175px !important;
+}
+
+.layout-child.meter-title {
+  display: none;
+}
+
+.layout-child.spacer.cds--cc--spacer {
+  display: none;
 }
 
 .text-blue {

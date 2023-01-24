@@ -1,19 +1,18 @@
 import React from 'react';
 import {
-  Tile,
   Button,
   ButtonSet,
   Link,
   ProgressStep,
   ProgressIndicator,
-  ToastNotification,
   UnorderedList,
   ListItem,
   StructuredListWrapper,
   StructuredListBody,
-  StructuredListHead,
   StructuredListRow,
   StructuredListCell,
+  ContentSwitcher,
+  Switch,
 } from 'carbon-components-react';
 
 const link_to_call = '/shared/call.pdf';
@@ -21,7 +20,15 @@ const link_to_call = '/shared/call.pdf';
 class ProgramPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { day: 1 };
+  }
+
+  switchDay(e) {
+    console.log(e);
+    this.setState({
+      ...this.state,
+      day: e.index + 1,
+    });
   }
 
   render() {
@@ -32,115 +39,432 @@ class ProgramPage extends React.Component {
             className="bx--grid bx--grid--full-width container"
             style={{ minHeight: '100vh' }}>
             <br />
+            <br />
+
             <div className="bx--row">
               <div className="bx--col-lg-4">
-                <ToastNotification
-                  lowContrast
-                  kind="error"
-                  iconDescription="close button"
-                  subtitle={
-                    <span>
-                      This page is under construction. Missing details will be
-                      filled in soon after the conference logistics are more
-                      settled.
-                    </span>
-                  }
-                  timeout={0}
-                  title="Under Construction"
-                />
+                <ContentSwitcher
+                  onChange={this.switchDay.bind(this)}
+                  size="sm"
+                  style={{ marginBottom: '20px' }}>
+                  <Switch text="Day 1 Feb 7 EST" />
+                  <Switch text="Day 2 Feb 8 EST" />
+                </ContentSwitcher>
               </div>
             </div>
 
-            <h4 style={{ marginTop: '50px' }}>Tentative Schedule</h4>
-            <hr />
-
-            <div className="bx--row">
-              <div className="bx--col-lg-16">
-                <Tile
-                  style={{ backgroundColor: '#fafafa', marginBottom: '20px' }}>
-                  <p>
-                    The following is a{' '}
-                    <span style={{ color: 'red' }}>tentative</span> schedule.
-                    More details, including speakers, tutorials, and featured
-                    tools for system demonstrations, will be announced soon.
-                    Make sure to register your interest{' '}
-                    <Link href="/">here</Link>, to get a notification when the
-                    event is confirmed.
-                  </p>
-                </Tile>
+            {this.state.day === 1 && (
+              <div className="bx--row">
+                <div className="bx--col-lg-14">
+                  <StructuredListWrapper ariaLabel="Structured list">
+                    <StructuredListBody>
+                      <StructuredListRow>
+                        <StructuredListCell>6:00 EST</StructuredListCell>
+                        <StructuredListCell>
+                          Rise and Shine{' '}
+                          <span role="img" aria-label="sunrise">
+                            &#127774;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          8:30 - 9:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Introduction to Business Process Management
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.diag.uniroma1.it/~marrella"
+                            target="_blank">
+                            Andrea Marrella
+                          </Link>{' '}
+                          and{' '}
+                          <Link
+                            href="https://ict.fbk.eu/people/detail/chiara-di-francescomarino"
+                            target="_blank">
+                            Chiara Di Francescomarino
+                          </Link>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          9:15 - 10:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.padsweb.rwth-aachen.de/wvdaalst"
+                            target="_blank">
+                            Wil van der Aalst
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Using Process Mining to lower the threshold of
+                            Artificial Intelligence and Machine Learning in
+                            Business Applications
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          10:00 - 10:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.inf.unibz.it/~montali"
+                            target="_blank">
+                            Marco Montali
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            On the interplay of Processes and Data using AI
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          10:45 - 11:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Coffee Break{' '}
+                          <span role="img" aria-label="coffee break">
+                            &#9749;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          11:15 - 12:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="https://kodu.ut.ee/~dumas"
+                            target="_blank">
+                            Marlon Dumas
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            From Process Mining to Augmented Business Process
+                            Management: Opportunities and Challenges
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          12:00 - 12:30 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Panel</StructuredListCell>
+                        <StructuredListCell>
+                          Discussion with Wil van der Aalst, Marco Montali, and
+                          Marlon Dumas
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          12:30 - 14:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Lunch Break{' '}
+                          <span role="img" aria-label="lunch break">
+                            &#128523;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          14:00 - 14:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.cs.cmu.edu/~mmv"
+                            target="_blank">
+                            Manuela Veloso
+                          </Link>{' '}
+                          | <span>Impactful AI in Finance</span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          14:45 - 15:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          Breakout Session
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          Impact of Foundational Models on Business Process
+                          Management
+                          <br />
+                          <br />
+                          Moderator:{' '}
+                          <Link
+                            href="https://researcher.watson.ibm.com/researcher/view.php?person=ibm-yara.rizk"
+                            target="_blank">
+                            Yara Rizk
+                          </Link>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          15:15 - 15:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Coffee Break{' '}
+                          <span role="img" aria-label="coffee break">
+                            &#9749;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          15:45 - 16:30 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Lightning Talks</StructuredListCell>
+                        <StructuredListCell>
+                          Short 2-minute presentations from participants at the
+                          bridge program
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          16:30 - 17:30 EST
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          Poster and Demo Session
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          Meet and greet with your fellow AI4BPM colleagues over
+                          posters, system demonstrations, and student
+                          contributions
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>17:30 EST</StructuredListCell>
+                        <StructuredListCell head>
+                          End of Day 1
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          <span role="img" aria-label="dinner and drinks">
+                            &#129346;
+                          </span>{' '}
+                          <span
+                            role="img"
+                            aria-label="lots of dinner and drinks">
+                            &#127864;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell>18:00 EST</StructuredListCell>
+                        <StructuredListCell>
+                          AAAI Student Reception
+                        </StructuredListCell>
+                      </StructuredListRow>
+                    </StructuredListBody>
+                  </StructuredListWrapper>
+                </div>
               </div>
-            </div>
+            )}
 
-            <div className="bx--row">
-              <div className="bx--col-lg-16">
-                <StructuredListWrapper ariaLabel="Structured list">
-                  <StructuredListHead>
-                    <StructuredListRow head>
-                      <StructuredListCell head>Day 1</StructuredListCell>
-                      <StructuredListCell head>Feb 7, 2023</StructuredListCell>
-                    </StructuredListRow>
-                  </StructuredListHead>
-                  <StructuredListBody>
-                    <StructuredListRow>
-                      <StructuredListCell>8:00 - 15:00 EST</StructuredListCell>
-                      <StructuredListCell>Half-Day Tutorial</StructuredListCell>
-                      <StructuredListCell>
-                        Topics on Artificial Intelligence and Business Process
-                        Management, Process Modeling, Process Mining and
-                        Discovery, Prediction, and Conformance Checking, with
-                        applications to Robotic Process Automation, Web Service
-                        Composition, and so on.
-                      </StructuredListCell>
-                    </StructuredListRow>
-                    <StructuredListRow>
-                      <StructuredListCell>15:30 - 17:00 EST</StructuredListCell>
-                      <StructuredListCell>
-                        Poster and Demo Session
-                      </StructuredListCell>
-                      <StructuredListCell>
-                        Extended meet-and-greet session around contributed
-                        posters, student contributions, and highlighted tools
-                        and software for AI4BPM practitioners.
-                      </StructuredListCell>
-                    </StructuredListRow>
-                  </StructuredListBody>
-                  <StructuredListHead>
-                    <StructuredListRow head>
-                      <StructuredListCell head>Day 2</StructuredListCell>
-                      <StructuredListCell head>Feb 8, 2023</StructuredListCell>
-                    </StructuredListRow>
-                  </StructuredListHead>
-                  <StructuredListBody>
-                    <StructuredListRow>
-                      <StructuredListCell>8:00 - 14:30 EST</StructuredListCell>
-                      <StructuredListCell>Invited Talks</StructuredListCell>
-                      <StructuredListCell>
-                        Final list of speakers will be announced soon.
-                      </StructuredListCell>
-                    </StructuredListRow>
-                    <StructuredListRow>
-                      <StructuredListCell>15:00 - 16:00 EST</StructuredListCell>
-                      <StructuredListCell>Breakout Sessions</StructuredListCell>
-                      <StructuredListCell>
-                        This will be an activity session with the audience
-                        exploring topics of interest, blindspots, limitations,
-                        and challenge tasks on the AI4BPM theme.
-                      </StructuredListCell>
-                    </StructuredListRow>
-                    <StructuredListRow>
-                      <StructuredListCell>16:00 - 17:00 EST</StructuredListCell>
-                      <StructuredListCell>Panel Discussion</StructuredListCell>
-                      <StructuredListCell>
-                        Panelists will continue the discussion from the breakout
-                        sessions and conclude with calls to action for the
-                        AI4BPM community on exciting research opportunities
-                        ahead.
-                      </StructuredListCell>
-                    </StructuredListRow>
-                  </StructuredListBody>
-                </StructuredListWrapper>
+            {this.state.day === 2 && (
+              <div className="bx--row">
+                <div className="bx--col-lg-14">
+                  <StructuredListWrapper ariaLabel="Structured list">
+                    <StructuredListBody>
+                      <StructuredListRow>
+                        <StructuredListCell>6:00 EST</StructuredListCell>
+                        <StructuredListCell>
+                          Rise and Shine{' '}
+                          <span role="img" aria-label="wakey wakey">
+                            &#9200;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          8:30 - 8:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Recap of Day 1 and Warm-up
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>8:45 - 9:30 EST</StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.diag.uniroma1.it/degiacom"
+                            target="_blank">
+                            Giuseppe De Giacomo
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Foundations of Framed Autonomy in AI-Augmented BPM
+                            Systems
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          9:30 - 10:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="https://www.unibz.it/en/faculties/computer-science/academic-staff/person/41895-fabrizio-maria-maggi"
+                            target="_blank">
+                            Fabrizio Maggi
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            AI meets declarative process mining: A concrete
+                            initiative to move from theory to practice
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          10:15 - 10:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Panel</StructuredListCell>
+                        <StructuredListCell>
+                          Discussion with Giuseppe De Giacomo and Fabrizio Maggi
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          10:45 - 11:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Coffee Break{' '}
+                          <span role="img" aria-label="coffee break">
+                            &#9749;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          11:15 - 12:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link href="https://www.isi.edu/~gil" target="_blank">
+                            Yolanda Gil
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Organic Collaborations: A Challenge for Process
+                            Management
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          12:00 - 12:30 EST
+                        </StructuredListCell>
+                        <StructuredListCell>TBD</StructuredListCell>
+                        <StructuredListCell></StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          12:30 - 14:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Lunch Break{' '}
+                          <span role="img" aria-label="lunch break">
+                            &#128523;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          14:00 - 14:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="https://pdi.fbk.eu/ghidini"
+                            target="_blank">
+                            Chiara Ghidini
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Data, Conceptual Knowledge, and AI: What can they do
+                            together?
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          14:30 - 15:15 EST
+                        </StructuredListCell>
+                        <StructuredListCell>TBD</StructuredListCell>
+                        <StructuredListCell></StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>
+                          15:15 - 15:45 EST
+                        </StructuredListCell>
+                        <StructuredListCell head>
+                          Coffee Break{' '}
+                          <span role="img" aria-label="coffee break">
+                            &#9749;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          15:45 - 16:30 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="https://www.linkedin.com/in/ramaakkiraju"
+                            target="_blank">
+                            Rama Akkiraju
+                          </Link>{' '}
+                          | <span>TBD</span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>
+                          16:30 - 17:00 EST
+                        </StructuredListCell>
+                        <StructuredListCell>Panel</StructuredListCell>
+                        <StructuredListCell>
+                          Discussion with Chiara Ghidini and Rama Akkiraju
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow head>
+                        <StructuredListCell head>17:00 EST</StructuredListCell>
+                        <StructuredListCell head>
+                          End of Day 2
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          End of the AI4BPM Bridge Program at AAAI 2023 but a
+                          dawn of a new era of research at the intersection of
+                          artificial intelligence and business process
+                          management{' '}
+                          <span role="img" aria-label="hugging face">
+                            &#129303;
+                          </span>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                      <StructuredListRow>
+                        <StructuredListCell>18:00 EST</StructuredListCell>
+                        <StructuredListCell>
+                          AAAI Opening Reception
+                        </StructuredListCell>
+                      </StructuredListRow>
+                    </StructuredListBody>
+                  </StructuredListWrapper>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="bx--row" style={{ paddingBottom: '50px' }}>
               <div className="bx--col-lg-10" style={{ padding: '10px' }}>
@@ -199,7 +523,7 @@ class ProgramPage extends React.Component {
                         kind="primary"
                         className="call-button"
                         disabled>
-                        Submit on EasyChair
+                        Submit
                       </Button>
                       <Button
                         target="_blank"
@@ -207,7 +531,7 @@ class ProgramPage extends React.Component {
                         size="sm"
                         kind="secondary"
                         className="call-button">
-                        Read the Full Call
+                        Download
                       </Button>
                     </ButtonSet>
                     <br />

@@ -3,7 +3,7 @@ const TeamList = [
     id: 0,
     name: 'Andrea Marrella',
     affiliation: 'Sapienza Università di Roma',
-    link: 'http://www.diag.uniroma1.it/~marrella/',
+    link: 'http://www.diag.uniroma1.it/~marrella',
     image: 'andrea',
   },
   {
@@ -38,6 +38,7 @@ const TeamList = [
     id: 5,
     name: 'Chiara Di Francescomarino',
     affiliation: 'University of Trento',
+    link: 'https://ict.fbk.eu/people/detail/chiara-di-francescomarino',
     image: 'chiara',
   },
 ];

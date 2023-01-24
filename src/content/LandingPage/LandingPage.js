@@ -14,10 +14,9 @@ import {
 import '@carbon/charts/styles.css';
 import { MeterChart } from '@carbon/charts-react';
 import {
+  ButtonSet,
   Button,
-  Link,
   TextInput,
-  ToastNotification,
   FormGroup,
   RadioButtonGroup,
   RadioButton,
@@ -43,7 +42,7 @@ class LandingPage extends React.Component {
       mode: DEFAULT_MODE,
       data: [],
       options: {
-        height: '100px',
+        height: '50px',
         meter: {
           proportional: {
             total: 0,
@@ -180,19 +179,6 @@ class LandingPage extends React.Component {
             <h6>Feb 7-8, 2023. Washington DC, USA.</h6>
             <br />
 
-            <Button
-              target="_blank"
-              href="https://aaai.org/Conferences/AAAI-23"
-              kind="primary"
-              size="sm">
-              Attending AAAI
-            </Button>
-
-            <br />
-            <br />
-            <br />
-            <br />
-
             <div className="bx--row">
               <div className="bx--col-lg-12">
                 <p>
@@ -208,57 +194,32 @@ class LandingPage extends React.Component {
 
             <br />
             <br />
+
+            <Button
+              className="call-button"
+              target="_blank"
+              href="https://aaai.org/Conferences/AAAI-23"
+              kind="primary"
+              size="sm">
+              Attending AAAI
+            </Button>
+
+            <br />
+            <br />
+            <Button
+              className="call-button"
+              href="/program"
+              kind="secondary"
+              size="sm">
+              Program
+            </Button>
+
+            <br />
+            <br />
             <br />
             <br />
 
             <div className="bx--row">
-              <div className="bx--col-lg-6">
-                {this.state.data && this.state.data.length > 0 && (
-                  <>
-                    <MeterChart
-                      data={this.state.data}
-                      options={this.state.options}></MeterChart>
-                    <br />
-                    <br />
-                    <Button
-                      target="_blank"
-                      href={link_to_slack}
-                      size="sm"
-                      kind="danger">
-                      Join us on Slack
-                    </Button>
-                  </>
-                )}
-
-                <br />
-                <br />
-                <ToastNotification
-                  lowContrast
-                  kind="info"
-                  style={{ width: '100%' }}
-                  caption={
-                    <Link
-                      href="https://twitter.com/tsitsulin_/status/1571082786181894146"
-                      target="_blank">
-                      Learn more
-                    </Link>
-                  }
-                  iconDescription="close button"
-                  subtitle={
-                    <span>
-                      We stand with the global AI community and recognize that
-                      most of the world cannot attend conferences in Europe and
-                      the USA. This disproportionately affects our black and
-                      brown colleagues. While we hope that you can attend in
-                      person if you can, in conversations with AAAI 2023, we
-                      commit to a hybrid format, until such time conferences can
-                      find more friendly hosts.
-                    </span>
-                  }
-                  timeout={0}
-                  title="Event Format"
-                />
-              </div>
               <div className="bx--col-lg-8">
                 <TextInput
                   light
@@ -288,6 +249,17 @@ class LandingPage extends React.Component {
 
                 <br />
                 <br />
+                {this.state.data && this.state.data.length > 0 && (
+                  <>
+                    <MeterChart
+                      data={this.state.data}
+                      options={this.state.options}></MeterChart>
+                  </>
+                )}
+
+                <br />
+                <br />
+
                 <FormGroup legendText="How do you plan to attend the conference?">
                   <RadioButtonGroup
                     onChange={this.handleSelectionChange.bind(this)}
@@ -315,15 +287,27 @@ class LandingPage extends React.Component {
                   </RadioButtonGroup>
                 </FormGroup>
 
-                <Button
-                  kind="primary"
-                  size="sm"
-                  onClick={this.addNewItem.bind(this)}
-                  disabled={
-                    this.state.email.length === 0 || this.state.registered
-                  }>
-                  Register
-                </Button>
+                <ButtonSet>
+                  <Button
+                    className="call-button"
+                    kind="primary"
+                    size="sm"
+                    onClick={this.addNewItem.bind(this)}
+                    disabled={
+                      this.state.email.length === 0 || this.state.registered
+                    }>
+                    Register
+                  </Button>
+
+                  <Button
+                    className="call-button"
+                    target="_blank"
+                    href={link_to_slack}
+                    size="sm"
+                    kind="danger">
+                    Join on Slack
+                  </Button>
+                </ButtonSet>
               </div>
             </div>
 
