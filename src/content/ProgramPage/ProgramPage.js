@@ -120,7 +120,8 @@ class ProgramPage extends React.Component {
                           </Link>{' '}
                           |{' '}
                           <span>
-                            On the interplay of Processes and Data using AI
+                            From propositional to relational dynamic systems: AI
+                            for data-aware processes
                           </span>
                         </StructuredListCell>
                       </StructuredListRow>
@@ -364,8 +365,19 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>
                           12:00 - 12:30 EST
                         </StructuredListCell>
-                        <StructuredListCell>TBD</StructuredListCell>
-                        <StructuredListCell></StructuredListCell>
+                        <StructuredListCell>Tutorial</StructuredListCell>
+                        <StructuredListCell>
+                          <Link
+                            href="http://www.diag.uniroma1.it/~marrella"
+                            target="_blank">
+                            Andrea Marrella
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Automated Planning for BPMers: Research Challenges
+                            and Successful Applications
+                          </span>
+                        </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
                         <StructuredListCell head>
@@ -400,8 +412,11 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>
                           14:30 - 15:15 EST
                         </StructuredListCell>
-                        <StructuredListCell>TBD</StructuredListCell>
-                        <StructuredListCell></StructuredListCell>
+                        <StructuredListCell>Acitivity</StructuredListCell>
+                        <StructuredListCell>
+                          Breakout session with discussion of next steps,
+                          research challenges, and community engagement.
+                        </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
                         <StructuredListCell head>
