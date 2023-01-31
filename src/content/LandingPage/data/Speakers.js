@@ -54,6 +54,12 @@ const InvitedList = [
       'https://www.unibz.it/en/faculties/computer-science/academic-staff/person/41895-fabrizio-maria-maggi',
     image: 'fabrizio',
   },
+  {
+    name: 'Arik Senderovich',
+    affiliation: 'York University',
+    link: 'https://www.ariksenderovich.com/',
+    image: 'arik',
+  },
 ];
 
 export { InvitedList };

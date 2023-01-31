@@ -410,17 +410,25 @@ class ProgramPage extends React.Component {
                       </StructuredListRow>
                       <StructuredListRow>
                         <StructuredListCell>
-                          14:30 - 15:15 EST
+                          14:45 - 15:30 EST
                         </StructuredListCell>
-                        <StructuredListCell>Acitivity</StructuredListCell>
+                        <StructuredListCell>Invited Talk</StructuredListCell>
                         <StructuredListCell>
-                          Breakout session with discussion of next steps,
-                          research challenges, and community engagement.
+                          <Link
+                            href="https://www.ariksenderovich.com"
+                            target="_blank">
+                            Arik Senderovich
+                          </Link>{' '}
+                          |{' '}
+                          <span>
+                            Queue Mining: The journey from Predictive to
+                            Prescriptive Analytics in Congested Systems
+                          </span>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
                         <StructuredListCell head>
-                          15:15 - 15:45 EST
+                          15:30 - 15:45 EST
                         </StructuredListCell>
                         <StructuredListCell head>
                           Coffee Break{' '}
