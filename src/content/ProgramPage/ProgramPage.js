@@ -162,6 +162,10 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>
                           Discussion with Wil van der Aalst, Marco Montali, and
                           Marlon Dumas
+                          <br />
+                          <br />
+                          Moderator: Andrea Marrella and Chiara Di
+                          Francescomarino
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -332,6 +336,9 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>Panel</StructuredListCell>
                         <StructuredListCell>
                           Discussion with Giuseppe De Giacomo and Fabrizio Maggi
+                          <br />
+                          <br />
+                          Moderator: Yara Rizk
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -371,6 +378,10 @@ class ProgramPage extends React.Component {
                             href="http://www.diag.uniroma1.it/~marrella"
                             target="_blank">
                             Andrea Marrella
+                          </Link>{' '}
+                          and{' '}
+                          <Link href="http://tchakra2.com" target="_blank">
+                            Tathagata Chakraborti
                           </Link>{' '}
                           |{' '}
                           <span>
@@ -458,6 +469,9 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>Panel</StructuredListCell>
                         <StructuredListCell>
                           Discussion with Chiara Ghidini and Rama Akkiraju
+                          <br />
+                          <br />
+                          Moderator: Vatche Isahagian
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
