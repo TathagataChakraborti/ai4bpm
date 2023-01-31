@@ -13,6 +13,7 @@ import {
   StructuredListCell,
   ContentSwitcher,
   Switch,
+  Tag,
 } from 'carbon-components-react';
 
 const link_to_call = '/shared/call.pdf';
@@ -86,6 +87,15 @@ class ProgramPage extends React.Component {
                             target="_blank">
                             Chiara Di Francescomarino
                           </Link>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -105,6 +115,15 @@ class ProgramPage extends React.Component {
                             Artificial Intelligence and Machine Learning in
                             Business Applications
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -123,6 +142,15 @@ class ProgramPage extends React.Component {
                             From propositional to relational dynamic systems: AI
                             for data-aware processes
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -152,6 +180,15 @@ class ProgramPage extends React.Component {
                             From Process Mining to Augmented Business Process
                             Management: Opportunities and Challenges
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -166,6 +203,15 @@ class ProgramPage extends React.Component {
                           <br />
                           Moderator: Andrea Marrella and Chiara Di
                           Francescomarino
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -191,6 +237,15 @@ class ProgramPage extends React.Component {
                             Manuela Veloso
                           </Link>{' '}
                           | <span>Impactful AI in Finance</span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -209,6 +264,15 @@ class ProgramPage extends React.Component {
                             Impact of Foundational Models on Business Process
                             Management
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -230,6 +294,15 @@ class ProgramPage extends React.Component {
                         <StructuredListCell>
                           Short 2-minute presentations from participants at the
                           bridge program
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -243,6 +316,15 @@ class ProgramPage extends React.Component {
                           Meet and greet with your fellow AI4BPM colleagues over
                           posters, system demonstrations, and student
                           contributions
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -309,6 +391,15 @@ class ProgramPage extends React.Component {
                             Foundations of Framed Autonomy in AI-Augmented BPM
                             Systems
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -327,6 +418,15 @@ class ProgramPage extends React.Component {
                             AI meets declarative process mining: A concrete
                             initiative to move from theory to practice
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -339,6 +439,15 @@ class ProgramPage extends React.Component {
                           <br />
                           <br />
                           Moderator: Yara Rizk
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -366,6 +475,15 @@ class ProgramPage extends React.Component {
                             Organic Collaborations: A Challenge for Process
                             Management
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -388,6 +506,15 @@ class ProgramPage extends React.Component {
                             Automated Planning for BPMers: Research Challenges
                             and Successful Applications
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -417,6 +544,15 @@ class ProgramPage extends React.Component {
                             Data, Conceptual Knowledge, and AI: What can they do
                             together?
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -435,6 +571,15 @@ class ProgramPage extends React.Component {
                             Queue Mining: The journey from Predictive to
                             Prescriptive Analytics in Congested Systems
                           </span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="green"
+                            title="in person"
+                            size="sm">
+                            {' '}
+                            In person{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -460,6 +605,15 @@ class ProgramPage extends React.Component {
                             Rama Akkiraju
                           </Link>{' '}
                           | <span>TBD</span>
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="cyan"
+                            title="remote"
+                            size="sm">
+                            {' '}
+                            Remote{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -472,6 +626,15 @@ class ProgramPage extends React.Component {
                           <br />
                           <br />
                           Moderator: Vatche Isahagian
+                          <br />
+                          <Tag
+                            className="square-pants"
+                            type="purple"
+                            title="hybrid"
+                            size="sm">
+                            {' '}
+                            Hybrid{' '}
+                          </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
