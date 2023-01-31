@@ -24,8 +24,19 @@ class ProgramPage extends React.Component {
     this.state = { day: 1 };
   }
 
+  componentDidMount() {
+    const current_time = new Date();
+    const set_time = new Date(
+      'Tue Feb 07 2023 17:00:00 GMT-0500 (Eastern Daylight Time)'
+    );
+    if (current_time > set_time)
+      this.setState({
+        ...this.state,
+        day: 2,
+      });
+  }
+
   switchDay(e) {
-    console.log(e);
     this.setState({
       ...this.state,
       day: e.index + 1,
@@ -45,6 +56,7 @@ class ProgramPage extends React.Component {
             <div className="bx--row">
               <div className="bx--col-lg-4">
                 <ContentSwitcher
+                  selectedIndex={this.state.day - 1}
                   onChange={this.switchDay.bind(this)}
                   size="sm"
                   style={{ marginBottom: '20px' }}>
