@@ -80,6 +80,13 @@ const Tools = [
     description: 'Blindingly Simple Protocol Language.',
     code: 'https://gitlab.com/masr/bspl',
   },
+  {
+    name: 'Cortado',
+    description:
+      'A process mining tool for interactive/incremental process discovery.',
+    home: 'https://cortado.fit.fraunhofer.de',
+    code: 'https://github.com/cortado-tool/cortado',
+  },
 ];
 
 export { Tools };

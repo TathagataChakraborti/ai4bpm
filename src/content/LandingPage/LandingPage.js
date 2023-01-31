@@ -194,7 +194,16 @@ class LandingPage extends React.Component {
 
             <br />
             <br />
+            <Button
+              className="call-button"
+              href="/program"
+              kind="secondary"
+              size="sm">
+              Program
+            </Button>
 
+            <br />
+            <br />
             <Button
               className="call-button"
               target="_blank"
@@ -208,10 +217,11 @@ class LandingPage extends React.Component {
             <br />
             <Button
               className="call-button"
-              href="/program"
-              kind="secondary"
+              target="_blank"
+              href="https://aaai.org/Conferences/AAAI-23/covid-19-policy"
+              kind="tertiary"
               size="sm">
-              Program
+              COVID Policy
             </Button>
 
             <br />
