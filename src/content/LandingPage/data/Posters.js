@@ -19,7 +19,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 09:30',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 2489,
@@ -29,7 +29,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 13:45',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 2522,
@@ -41,7 +41,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 28, 11:59',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 3073,
@@ -62,7 +62,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 28, 02:26',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 4249,
@@ -73,7 +73,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 07:35',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 4407,
@@ -96,7 +96,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM Demos',
     Time: 'Nov 28, 17:18',
-    video: 'https://www.youtube.com/watch?v=YKdfUtHXfkE',
+    video: null,
     poster: false,
   },
   {
@@ -107,7 +107,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 14:40',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 4789,
@@ -118,7 +118,7 @@ const PostersList = [
     Track: 'AI4BPM DC',
     Time: 'Nov 17, 22:57',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 5161,
@@ -128,7 +128,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 09:16',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 5236,
@@ -139,7 +139,7 @@ const PostersList = [
     Track: 'AI4BPM DC',
     Time: 'Nov 17, 18:56',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 5243,
@@ -151,7 +151,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 27, 03:00',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 5340,
@@ -172,7 +172,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 20:22',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 6107,
@@ -195,7 +195,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 14:13',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 7803,
@@ -215,7 +215,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 19, 09:03',
     video: null,
-    poster: false,
+    poster: true,
   },
   {
     '#': 9546,
@@ -237,7 +237,7 @@ const PostersList = [
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 21:42',
     video: null,
-    poster: false,
+    poster: true,
   },
 ];
 
