@@ -30,6 +30,7 @@ const link_to_database =
   'https://ai4bmpback.smdmweo62qh.us-east.codeengine.appdomain.cloud';
 
 const TeamListShuffled = shuffleArray(TeamList);
+const ExtendedSpeakerList = shuffleArray(TeamList).filter(item => item.speaker);
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -325,11 +326,16 @@ class LandingPage extends React.Component {
             <br />
             <br />
             <br />
-            <h4>Confirmed Speakers</h4>
+            <h4>Speakers</h4>
             <hr />
 
             <div className="bx--row">
               {InvitedList.map((item, key) => (
+                <React.Fragment key={key}>
+                  <Instructor props={item} />
+                </React.Fragment>
+              ))}
+              {ExtendedSpeakerList.map((item, key) => (
                 <React.Fragment key={key}>
                   <Instructor props={item} />
                 </React.Fragment>

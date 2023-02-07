@@ -1,6 +1,10 @@
 import React from 'react';
 import { PostersList } from '../LandingPage/data/Posters';
-import { shuffleArray, generatePDFUrl } from '../../components/Info';
+import {
+  shuffleArray,
+  generatePDFUrl,
+  generatePosterImageUrl,
+} from '../../components/Info';
 import { Tag, Tile, Button, ButtonSet } from 'carbon-components-react';
 
 const PostersListShuffled = shuffleArray(PostersList);
@@ -48,18 +52,31 @@ const Poster = props => (
             size="sm"
             href={generatePDFUrl(props.props['#'])}
             target="_blank"
-            kind="primary">
+            kind="secondary">
             Read
           </Button>
 
-          <Button
-            disabled
-            className="button-diminish"
-            target="_blank"
-            kind="secondary"
-            size="sm">
-            Poster
-          </Button>
+          {props.props['video'] && (
+            <Button
+              className="button-diminish"
+              href={props.props['video']}
+              target="_blank"
+              kind="primary"
+              size="sm">
+              Watch
+            </Button>
+          )}
+
+          {props.props['poster'] && (
+            <Button
+              className="button-diminish"
+              href={generatePosterImageUrl(props.props['#'])}
+              target="_blank"
+              kind="tertiary"
+              size="sm">
+              Poster
+            </Button>
+          )}
         </ButtonSet>
       </div>
     </div>

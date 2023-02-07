@@ -14,7 +14,7 @@ function generatePDFUrl(id) {
 }
 
 function generatePosterImageUrl(id) {
-  return `${process.env.PUBLIC_URL}/posters/${id}.png`;
+  return `${process.env.PUBLIC_URL}/posters/Poster-${id}.pdf`;
 }
 
 function generateImageUrl(imageUrl) {

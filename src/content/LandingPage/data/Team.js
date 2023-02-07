@@ -5,6 +5,7 @@ const TeamList = [
     affiliation: 'Sapienza Università di Roma',
     link: 'http://www.diag.uniroma1.it/~marrella',
     image: 'andrea',
+    speaker: true,
   },
   {
     id: 1,
@@ -20,6 +21,7 @@ const TeamList = [
     link:
       'https://researcher.watson.ibm.com/researcher/view.php?person=ibm-yara.rizk',
     image: 'yara',
+    speaker: true,
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const TeamList = [
     affiliation: 'University of Trento',
     link: 'https://ict.fbk.eu/people/detail/chiara-di-francescomarino',
     image: 'chiara',
+    speaker: true,
   },
 ];
 

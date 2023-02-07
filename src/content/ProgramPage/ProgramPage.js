@@ -509,10 +509,6 @@ class ProgramPage extends React.Component {
                             target="_blank">
                             Andrea Marrella
                           </Link>{' '}
-                          and{' '}
-                          <Link href="http://tchakra2.com" target="_blank">
-                            Tathagata Chakraborti
-                          </Link>{' '}
                           |{' '}
                           <span>
                             Automated Planning for BPMers: Research Challenges
@@ -559,11 +555,11 @@ class ProgramPage extends React.Component {
                           <br />
                           <Tag
                             className="square-pants"
-                            type="green"
-                            title="in person"
+                            type="cyan"
+                            title="remote"
                             size="sm">
                             {' '}
-                            In person{' '}
+                            Remote{' '}
                           </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
@@ -616,7 +612,6 @@ class ProgramPage extends React.Component {
                             target="_blank">
                             Rama Akkiraju
                           </Link>{' '}
-                          | <span>TBD</span>
                           <br />
                           <Tag
                             className="square-pants"
@@ -634,7 +629,7 @@ class ProgramPage extends React.Component {
                         </StructuredListCell>
                         <StructuredListCell>Panel</StructuredListCell>
                         <StructuredListCell>
-                          Discussion with Chiara Ghidini and Rama Akkiraju
+                          Discussion with Rama Akkiraju
                           <br />
                           <br />
                           Moderator: Vatche Isahagian
