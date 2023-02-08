@@ -7,7 +7,7 @@ const SisterVenues = [
   {
     link: 'https://pmai-ijcai.github.io',
     text:
-      'First International International Workshop on Process Management in the AI Era at IJCAI 2022',
+      'International International Workshop on Process Management in the AI Era at IJCAI 2022',
     image: 'ijcai',
   },
   {
@@ -25,6 +25,12 @@ const SisterVenues = [
     text:
       'EDOC 2022 Panel on Augmented Process Management and Enterprise Information Systers',
     image: 'edoc',
+  },
+  {
+    link: 'http://ml4pm2022.di.unimi.it',
+    text:
+      'International Workshop on Leveraging Machine Learning in Process Mining',
+    image: 'ml4pm',
   },
 ];
 

@@ -87,6 +87,13 @@ const Tools = [
     home: 'https://cortado.fit.fraunhofer.de',
     code: 'https://github.com/cortado-tool/cortado',
   },
+  {
+    name: 'TraceAligner',
+    description:
+      'Aligns logs for Business Process Mining using Automated Planning techniques.',
+    home: 'http://ai4bpm.com/posters/AI4BPM_paper_9546.pdf',
+    code: 'https://github.com/whitemech/TraceAligner',
+  },
 ];
 
 export { Tools };

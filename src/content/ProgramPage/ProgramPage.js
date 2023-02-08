@@ -29,7 +29,10 @@ class ProgramPage extends React.Component {
     const set_time = new Date(
       'Tue Feb 07 2023 17:00:00 GMT-0500 (Eastern Daylight Time)'
     );
-    if (current_time > set_time)
+    const unset_time = new Date(
+      'Tue Feb 08 2023 17:00:00 GMT-0500 (Eastern Daylight Time)'
+    );
+    if (current_time > set_time && current_time < unset_time)
       this.setState({
         ...this.state,
         day: 2,
@@ -612,6 +615,9 @@ class ProgramPage extends React.Component {
                             target="_blank">
                             Rama Akkiraju
                           </Link>{' '}
+                          | The Perfect Storm: How Generative AI, GPUs, Cloud
+                          Computing, and Robots are transforming Business
+                          Processes
                           <br />
                           <Tag
                             className="square-pants"
@@ -623,29 +629,8 @@ class ProgramPage extends React.Component {
                           </Tag>
                         </StructuredListCell>
                       </StructuredListRow>
-                      <StructuredListRow>
-                        <StructuredListCell>
-                          16:30 - 17:00 EST
-                        </StructuredListCell>
-                        <StructuredListCell>Panel</StructuredListCell>
-                        <StructuredListCell>
-                          Discussion with Rama Akkiraju
-                          <br />
-                          <br />
-                          Moderator: Vatche Isahagian
-                          <br />
-                          <Tag
-                            className="square-pants"
-                            type="purple"
-                            title="hybrid"
-                            size="sm">
-                            {' '}
-                            Hybrid{' '}
-                          </Tag>
-                        </StructuredListCell>
-                      </StructuredListRow>
                       <StructuredListRow head>
-                        <StructuredListCell head>17:00 EST</StructuredListCell>
+                        <StructuredListCell head>16:30 EST</StructuredListCell>
                         <StructuredListCell head>
                           End of Day 2
                         </StructuredListCell>
