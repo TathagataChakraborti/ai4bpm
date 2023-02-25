@@ -285,12 +285,23 @@ class LandingPage extends React.Component {
                 dataSource={{
                   sourceType: 'url',
                   url:
-                    'https://twitter.com/tchakra2/timelines/1582756937313456128?ref_src=twsrc%5Etfw',
+                    'https://twitter.com/tchakra2/lists/1582753808479883265?ref_src=twsrc%5Etfw',
                 }}
                 options={{
-                  height: '2500',
+                  height: '2000',
                 }}
               />
+              <p className="disclaimer">
+                This list of AI4BPMers gets larger as and when{' '}
+                <a
+                  href="https://twitter.com/tchakra2"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  tchakra2
+                </a>{' '}
+                finds one on Twitter. If you want yourself to be added to it,
+                send him a DM.
+              </p>
             </div>
 
             <img
