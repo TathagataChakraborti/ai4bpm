@@ -139,6 +139,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             Remote{' '}
                           </Tag>
+                          <a
+                            href="https://www.dropbox.com/s/vugzzkn0hg2t3fx/AAAI-PM-AI-ML-WvdA2023.pdf?dl=0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -166,6 +180,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             In person{' '}
                           </Tag>
+                          <a
+                            href="https://www.dropbox.com/s/lt22w7575j9jtz6/ai4bpm-aaa2023-relational-dynamics.pdf?dl=0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -204,6 +232,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             Remote{' '}
                           </Tag>
+                          <a
+                            href="https://www.dropbox.com/s/pft18tdecuvqnmx/AI-Augmented%20BPM.pptx?dl=0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -288,6 +330,19 @@ class ProgramPage extends React.Component {
                             {' '}
                             In person{' '}
                           </Tag>
+                          <a
+                            href="/slides/AI4BPM2023-Foundation Models.pdf"
+                            target="_blank"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -318,6 +373,16 @@ class ProgramPage extends React.Component {
                             {' '}
                             Hybrid{' '}
                           </Tag>
+                          <a href="/posters" style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="View"
+                              size="sm">
+                              {' '}
+                              View{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -340,6 +405,16 @@ class ProgramPage extends React.Component {
                             {' '}
                             Hybrid{' '}
                           </Tag>
+                          <a href="/posters" style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="View"
+                              size="sm">
+                              {' '}
+                              View{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -415,6 +490,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             Remote{' '}
                           </Tag>
+                          <a
+                            href="/slides/AAAI2023BridgeBPMslides.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -442,6 +531,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             Remote{' '}
                           </Tag>
+                          <a
+                            href="/slides/RuM_Fabrizio_Maggi_AAAIBridge.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -526,6 +629,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             In person{' '}
                           </Tag>
+                          <a
+                            href="/slides/slides_Marrella_AAAI_Bridge_2023.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>
@@ -564,6 +681,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             Remote{' '}
                           </Tag>
+                          <a
+                            href="https://drive.google.com/file/d/1SssMyvtvt1YMkXWkggk7-1Yh4fw4Aon0/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow>
@@ -591,6 +722,20 @@ class ProgramPage extends React.Component {
                             {' '}
                             In person{' '}
                           </Tag>
+                          <a
+                            href="/slides/aaai_23_bridge_ai4bpm_senderovich.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none' }}>
+                            <Tag
+                              className="square-pants download-tag"
+                              type="blue"
+                              title="PPTX"
+                              size="sm">
+                              {' '}
+                              PPTX{' '}
+                            </Tag>
+                          </a>
                         </StructuredListCell>
                       </StructuredListRow>
                       <StructuredListRow head>

@@ -7,7 +7,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 14:07',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=Qfzo-_cS1ak',
     poster: false,
   },
   {
@@ -18,7 +18,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 09:30',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=VkgmdqawoHA',
     poster: true,
   },
   {
@@ -28,7 +28,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 13:45',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=c8bIOZZayt4',
     poster: true,
   },
   {
@@ -40,7 +40,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 28, 11:59',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=3vLi2s6zKMA',
     poster: true,
   },
   {
@@ -72,7 +72,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 07:35',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=_tA_nOLQ38Q',
     poster: true,
   },
   {
@@ -84,7 +84,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 27, 03:08',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=4mMo6I75fkI',
     poster: false,
   },
   {
@@ -96,7 +96,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM Demos',
     Time: 'Nov 28, 17:18',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=g723xOl3IJ4',
     poster: false,
   },
   {
@@ -106,7 +106,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 14:40',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=PndXAxALu5s',
     poster: true,
   },
   {
@@ -150,7 +150,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 27, 03:00',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=nChBn4vJZUM',
     poster: true,
   },
   {
@@ -171,7 +171,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 20:22',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=4CjQS8S4zPg',
     poster: true,
   },
   {
@@ -182,7 +182,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM Demos',
     Time: 'Nov 18, 15:15',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=mgqriyUp2aU',
     poster: false,
   },
   {
@@ -194,7 +194,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 17, 14:13',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=3SIoP3cW1j0',
     poster: true,
   },
   {
@@ -204,7 +204,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 14:14',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=HvtpXoSXxR8',
     poster: true,
   },
   {
@@ -214,7 +214,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 19, 09:03',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=abvrU08hFsc',
     poster: true,
   },
   {
@@ -226,7 +226,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 28, 17:50',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=2KbbpFjvVt0',
     poster: false,
   },
   {
@@ -236,7 +236,7 @@ const PostersList = [
     paper: '✔',
     Track: 'AI4BPM EA',
     Time: 'Nov 18, 21:42',
-    video: null,
+    video: 'https://www.youtube.com/watch?v=VFpJex6rrBg',
     poster: true,
   },
 ];

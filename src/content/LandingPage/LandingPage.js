@@ -11,17 +11,7 @@ import {
   shuffleArray,
 } from '../../components/Info';
 
-import '@carbon/charts/styles.css';
-import { MeterChart } from '@carbon/charts-react';
-import {
-  ButtonSet,
-  Button,
-  TextInput,
-  FormGroup,
-  RadioButtonGroup,
-  RadioButton,
-  StructuredListBody,
-} from 'carbon-components-react';
+import { Button, StructuredListBody } from 'carbon-components-react';
 
 const DEFAULT_MODE = 'in-person';
 const link_to_slack =
@@ -208,119 +198,11 @@ class LandingPage extends React.Component {
             <Button
               className="call-button"
               target="_blank"
-              href="https://aaai.org/Conferences/AAAI-23"
-              kind="primary"
-              size="sm">
-              Attending AAAI
+              href={link_to_slack}
+              size="sm"
+              kind="danger">
+              Join on Slack
             </Button>
-
-            <br />
-            <br />
-            <Button
-              className="call-button"
-              target="_blank"
-              href="https://aaai.org/Conferences/AAAI-23/covid-19-policy"
-              kind="tertiary"
-              size="sm">
-              COVID Policy
-            </Button>
-
-            <br />
-            <br />
-            <br />
-            <br />
-
-            <div className="bx--row">
-              <div className="bx--col-lg-8">
-                <TextInput
-                  light
-                  helperText={
-                    <>
-                      {this.state.registered && (
-                        <span className="text-blue">{this.state.message} </span>
-                      )}
-                      {this.state.register_count > 0 && (
-                        <>
-                          <span className="text-blue">
-                            {this.state.register_count}
-                          </span>{' '}
-                          AI and BPM enthusiasts have expressed interest
-                          already!
-                        </>
-                      )}
-                    </>
-                  }
-                  id="email"
-                  labelText="Help us plan by registering your interest here. This email will be used ONLY to contact you when the event goes life, and nothing else."
-                  placeholder="Register with your contact email"
-                  value={this.state.email}
-                  onChange={this.handleInputChange.bind(this)}
-                  disabled={this.state.registered}
-                />
-
-                <br />
-                <br />
-                {this.state.data && this.state.data.length > 0 && (
-                  <>
-                    <MeterChart
-                      data={this.state.data}
-                      options={this.state.options}></MeterChart>
-                  </>
-                )}
-
-                <br />
-                <br />
-
-                <FormGroup legendText="How do you plan to attend the conference?">
-                  <RadioButtonGroup
-                    onChange={this.handleSelectionChange.bind(this)}
-                    defaultSelected={DEFAULT_MODE}
-                    legend="How do you plan to attend the conference?"
-                    name="radio-hybrid"
-                    valueSelected={this.state.mode}
-                    orientation="horizontal"
-                    labelPosition="right">
-                    <RadioButton
-                      id="radio-1"
-                      labelText="In person"
-                      value="in-person"
-                    />
-                    <RadioButton
-                      id="radio-2"
-                      labelText="Online"
-                      value="hybrid"
-                    />
-                    <RadioButton
-                      id="radio-3"
-                      labelText="Not sure yet"
-                      value="dont-know"
-                    />
-                  </RadioButtonGroup>
-                </FormGroup>
-
-                <ButtonSet>
-                  <Button
-                    className="call-button"
-                    kind="primary"
-                    size="sm"
-                    onClick={this.addNewItem.bind(this)}
-                    disabled={
-                      this.state.email.length === 0 || this.state.registered
-                    }>
-                    Register
-                  </Button>
-
-                  <Button
-                    className="call-button"
-                    target="_blank"
-                    href={link_to_slack}
-                    size="sm"
-                    kind="danger">
-                    Join on Slack
-                  </Button>
-                </ButtonSet>
-              </div>
-            </div>
 
             <br />
             <br />

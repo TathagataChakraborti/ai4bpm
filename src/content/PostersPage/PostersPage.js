@@ -1,5 +1,6 @@
 import React from 'react';
 import { PostersList } from '../LandingPage/data/Posters';
+import { DocumentPdf16, Ppt16, DocumentVideo16 } from '@carbon/icons-react';
 import {
   shuffleArray,
   generatePDFUrl,
@@ -49,22 +50,24 @@ const Poster = props => (
         <ButtonSet>
           <Button
             className="button-diminish"
-            size="sm"
             href={generatePDFUrl(props.props['#'])}
             target="_blank"
-            kind="secondary">
-            Read
-          </Button>
+            hasIconOnly
+            renderIcon={DocumentPdf16}
+            iconDescription="Abstract"
+            kind="ghost"
+          />
 
           {props.props['video'] && (
             <Button
               className="button-diminish"
               href={props.props['video']}
               target="_blank"
-              kind="primary"
-              size="sm">
-              Watch
-            </Button>
+              hasIconOnly
+              renderIcon={DocumentVideo16}
+              iconDescription="Video"
+              kind="ghost"
+            />
           )}
 
           {props.props['poster'] && (
@@ -72,10 +75,11 @@ const Poster = props => (
               className="button-diminish"
               href={generatePosterImageUrl(props.props['#'])}
               target="_blank"
-              kind="tertiary"
-              size="sm">
-              Poster
-            </Button>
+              hasIconOnly
+              renderIcon={Ppt16}
+              iconDescription="Poster"
+              kind="ghost"
+            />
           )}
         </ButtonSet>
       </div>

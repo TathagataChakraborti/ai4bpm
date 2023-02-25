@@ -1,7 +1,7 @@
 import React from 'react';
 import { shuffleArray } from '../../components/Info';
 import { Tools } from '../LandingPage/data/Tools';
-
+import { DocumentVideo16, LogoGithub16, Home16 } from '@carbon/icons-react';
 import {
   Tile,
   Button,
@@ -30,29 +30,40 @@ const Tool = props => (
 
       <div className="tool-links">
         <ButtonSet>
-          {props.props.home && (
-            <>
-              <Button
-                className="button-diminish"
-                size="sm"
-                href={props.props.home}
-                target="_blank"
-                kind="primary">
-                Home
-              </Button>
-              <br />
-            </>
-          )}
-
           {props.props.code && (
             <Button
               className="button-diminish"
               href={props.props.code}
               target="_blank"
-              kind="secondary"
-              size="sm">
-              GitHub
-            </Button>
+              hasIconOnly
+              renderIcon={LogoGithub16}
+              iconDescription="GitHub"
+              kind="ghost"
+            />
+          )}
+
+          {props.props.home && (
+            <Button
+              className="button-diminish"
+              href={props.props.home}
+              target="_blank"
+              hasIconOnly
+              renderIcon={Home16}
+              iconDescription="Home"
+              kind="ghost"
+            />
+          )}
+
+          {props.props.video && (
+            <Button
+              className="button-diminish"
+              href={props.props.video}
+              target="_blank"
+              hasIconOnly
+              renderIcon={DocumentVideo16}
+              iconDescription="Video"
+              kind="ghost"
+            />
           )}
         </ButtonSet>
       </div>
