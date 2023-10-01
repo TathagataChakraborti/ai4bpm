@@ -1,9 +1,8 @@
 {
   "name": "ai4bpm",
   "version": "0.0.0",
-  "private": true,
   "repository": "git@github.com:Tathagata-Chakraborti/ai4bpm.git",
-  "bugs": "git@github.com:Tathagata-Chakraborti/ai4bpm/issues",
+  "bugs": "https://github.com/Tathagata-Chakraborti/ai4bpm/issues",
   "license": "MIT",
   "scripts": {
     "build": "react-scripts --max_old_space_size=4096 build",
@@ -14,8 +13,7 @@
     "format:diff": "prettier --list-different \"**/*.{js,md,scss}\"",
     "format:staged": "prettier --write",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "deploy": "rm -rf ./build && yarn build && cf push -f manifest.yml"
+    "test": "react-scripts test"
   },
   "dependencies": {
     "d3": "^7.6.0",
