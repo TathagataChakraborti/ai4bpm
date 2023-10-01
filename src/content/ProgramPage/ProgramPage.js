@@ -14,7 +14,7 @@ import {
   ContentSwitcher,
   Switch,
   Tag,
-} from 'carbon-components-react';
+} from '@carbon/react';
 
 const link_to_call = '/shared/call.pdf';
 

@@ -1,12 +1,12 @@
-@import 'carbon-components/scss/globals/scss/vendor/@carbon/type/scss/font-family.scss';
-@import 'carbon-components/scss/globals/scss/vendor/@carbon/layout/scss/breakpoint.scss';
-@import 'carbon-components/scss/globals/scss/typography.scss';
-@import 'carbon-components/scss/globals/scss/vars.scss';
+@use '@carbon/react/scss/themes';
+@use '@carbon/react/scss/theme';
+@use '@carbon/react/scss/zone';
 
-@import './components/Info/info.scss';
-@import './components/PageHeader/page-header.scss';
+@use './components/Info/info';
+@use './components/PageHeader/page-header';
 
-@import './content/LandingPage/landing-page.scss';
-@import './content/ToolsPage/tools-page.scss';
-@import './content/PostersPage/posters-page.scss';
-@import './content/ProgramPage/program-page.scss';
+@use './content/LandingPage/landing-page';
+
+@use './content/ToolsPage/tools-page';
+@use './content/PostersPage/posters-page';
+@use './content/ProgramPage/program-page';

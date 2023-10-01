@@ -1,12 +1,12 @@
 import React from 'react';
 import { PostersList } from '../LandingPage/data/Posters';
-import { DocumentPdf16, Ppt16, DocumentVideo16 } from '@carbon/icons-react';
+import { DocumentPdf, Ppt, DocumentVideo } from '@carbon/icons-react';
 import {
   shuffleArray,
   generatePDFUrl,
   generatePosterImageUrl,
 } from '../../components/Info';
-import { Tag, Tile, Button, ButtonSet } from 'carbon-components-react';
+import { Tag, Tile, Button, ButtonSet } from '@carbon/react';
 
 const PostersListShuffled = shuffleArray(PostersList);
 
@@ -53,7 +53,7 @@ const Poster = props => (
             href={generatePDFUrl(props.props['#'])}
             target="_blank"
             hasIconOnly
-            renderIcon={DocumentPdf16}
+            renderIcon={DocumentPdf}
             iconDescription="Abstract"
             kind="ghost"
           />
@@ -64,7 +64,7 @@ const Poster = props => (
               href={props.props['video']}
               target="_blank"
               hasIconOnly
-              renderIcon={DocumentVideo16}
+              renderIcon={DocumentVideo}
               iconDescription="Video"
               kind="ghost"
             />
@@ -76,7 +76,7 @@ const Poster = props => (
               href={generatePosterImageUrl(props.props['#'])}
               target="_blank"
               hasIconOnly
-              renderIcon={Ppt16}
+              renderIcon={Ppt}
               iconDescription="Poster"
               kind="ghost"
             />

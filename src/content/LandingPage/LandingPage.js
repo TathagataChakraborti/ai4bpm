@@ -11,7 +11,7 @@ import {
   shuffleArray,
 } from '../../components/Info';
 
-import { Button, StructuredListBody } from 'carbon-components-react';
+import { Theme, Grid, Column, Button, StructuredListBody } from '@carbon/react';
 
 const DEFAULT_MODE = 'in-person';
 const link_to_slack =
@@ -51,7 +51,6 @@ class LandingPage extends React.Component {
       },
     };
   }
-  to;
 
   updateData = data => {
     const new_data = [
@@ -153,25 +152,21 @@ class LandingPage extends React.Component {
 
   render() {
     return (
-      <div className="bx--row">
-        <div
-          className="bx--col-lg-10"
-          style={{ backgroundColor: '#f4f4f4', paddingRight: '0' }}>
-          <div
-            className="bx--grid bx--grid--full-width container"
-            style={{ paddingTop: '50px' }}>
-            <h1 className="text-blue">AAAI 2023 Bridge Program on</h1>
-            <h1 className="title">
-              Artificial Intelligence and Business Process Management
-            </h1>
+      <Theme theme="g10">
+        <Grid>
+          <Column lg={10} md={8} sm={4}>
+            <Theme theme="g10" style={{ paddingBottom: '50px' }}>
+              <div style={{ paddingTop: '50px' }}>
+                <h1 className="text-blue">AAAI 2023 Bridge Program on</h1>
+                <h1 className="title">
+                  Artificial Intelligence and Business Process Management
+                </h1>
 
-            <br />
+                <br />
 
-            <h6>Feb 7-8, 2023. Washington DC, USA.</h6>
-            <br />
+                <h6>Feb 7-8, 2023. Washington DC, USA.</h6>
+                <br />
 
-            <div className="bx--row">
-              <div className="bx--col-lg-12">
                 <p>
                   The AI4BPM Bridge at AAAI 2023 brings together academics and
                   industry professionals working at the intersection of
@@ -180,145 +175,126 @@ class LandingPage extends React.Component {
                   sessions, tutorials, student outreach, meet and mingle
                   opportunities, hands-on system demonstrations, and much more!
                 </p>
+
+                <br />
+                <br />
+                <Button
+                  className="call-button"
+                  href="/#/program"
+                  kind="secondary"
+                  size="sm">
+                  Program
+                </Button>
+
+                <br />
+                <br />
+                <Button
+                  className="call-button"
+                  target="_blank"
+                  href={link_to_slack}
+                  size="sm"
+                  kind="danger">
+                  Join on Slack
+                </Button>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <h4>Speakers</h4>
+                <hr />
+
+                <Grid>
+                  {InvitedList.map((item, key) => (
+                    <React.Fragment key={key}>
+                      <Instructor props={item} />
+                    </React.Fragment>
+                  ))}
+                  {ExtendedSpeakerList.map((item, key) => (
+                    <React.Fragment key={key}>
+                      <Instructor props={item} />
+                    </React.Fragment>
+                  ))}
+                </Grid>
+
+                <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
+                <hr />
+                <Grid>
+                  {TeamListShuffled.map((item, key) => (
+                    <React.Fragment key={key}>
+                      <Instructor props={item} />
+                    </React.Fragment>
+                  ))}
+                </Grid>
               </div>
-            </div>
+            </Theme>
+          </Column>
 
-            <br />
-            <br />
-            <Button
-              className="call-button"
-              href="/program"
-              kind="secondary"
-              size="sm">
-              Program
-            </Button>
+          <Column lg={6} md={8} sm={4}>
+            <Theme
+              theme="white"
+              style={{ height: '100%', paddingBottom: '50px' }}>
+              <Column lg={16} md={8} sm={4}>
+                <img
+                  style={{ padding: '30px' }}
+                  src="/logo.png"
+                  alt="logo"
+                  width="90%"
+                />
 
-            <br />
-            <br />
-            <Button
-              className="call-button"
-              target="_blank"
-              href={link_to_slack}
-              size="sm"
-              kind="danger">
-              Join on Slack
-            </Button>
+                <StructuredListBody>
+                  {ReferenceList.map((item, key) => (
+                    <React.Fragment key={key}>
+                      <Reference props={item} />
+                    </React.Fragment>
+                  ))}
+                </StructuredListBody>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <h4>Speakers</h4>
-            <hr />
+                <br />
+                <br />
 
-            <div className="bx--row">
-              {InvitedList.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Instructor props={item} />
-                </React.Fragment>
-              ))}
-              {ExtendedSpeakerList.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Instructor props={item} />
-                </React.Fragment>
-              ))}
-            </div>
-
-            <h4 style={{ marginTop: '100px' }}>Organizing Team</h4>
-            <hr />
-            <Button
-              target="_blank"
-              href="mailto::ai4bpm-aaai@easychair.org"
-              size="sm"
-              kind="primary">
-              Contact
-            </Button>
-            <br />
-            <br />
-
-            <div className="bx--row">
-              {TeamListShuffled.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Instructor props={item} />
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-
-          <img
-            src="/images/bridge.png"
-            style={{ marginTop: '1250px' }}
-            width="100%"
-            alt="bridge"
-          />
-        </div>
-
-        <div className="bx--col-lg-6">
-          <div
-            className="bx--grid bx--grid--full-width container"
-            style={{
-              paddingTop: '50px',
-              backgroundColor: 'white',
-              position: 'relative',
-              height: '100%',
-            }}>
-            <img src="/logo.png" alt="logo" width="90%" />
-
-            <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-              <StructuredListBody>
-                {ReferenceList.map((item, key) => (
+                {SisterVenues.map((item, key) => (
                   <React.Fragment key={key}>
-                    <Reference props={item} />
+                    <Resource props={item} />
                   </React.Fragment>
                 ))}
-              </StructuredListBody>
 
-              {SisterVenues.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Resource props={item} />
-                </React.Fragment>
-              ))}
-            </div>
+                <br />
+                <br />
+              </Column>
 
-            <div className="bx--col-lg-16">
-              <Timeline
-                dataSource={{
-                  sourceType: 'url',
-                  url:
-                    'https://twitter.com/tchakra2/lists/1582753808479883265?ref_src=twsrc%5Etfw',
-                }}
-                options={{
-                  height: '2000',
-                }}
-              />
-              <p className="disclaimer">
-                This list of AI4BPMers gets larger as and when{' '}
-                <a
-                  href="https://twitter.com/tchakra2"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  tchakra2
-                </a>{' '}
-                finds one on Twitter. If you want yourself to be added to it,
-                send him a DM.
-              </p>
-            </div>
-
-            <img
-              style={{
-                marginTop: '150px',
-                marginBottom: '50px',
-                marginLeft: '10px',
-                position: 'absolute',
-                bottom: '0',
-              }}
-              src="/images/ibm.png"
-              alt="IBM Research"
-              width="50%"
-            />
-          </div>
-        </div>
-      </div>
+              <Column lg={16} md={8} sm={4} style={{ padding: '10px' }}>
+                <Timeline
+                  dataSource={{
+                    sourceType: 'url',
+                    url:
+                      'https://twitter.com/tchakra2/lists/1582753808479883265?ref_src=twsrc%5Etfw',
+                  }}
+                  options={{
+                    height: '2000',
+                  }}
+                />
+                <p className="disclaimer">
+                  This list of AI4BPMers gets larger as and when{' '}
+                  <a
+                    href="https://twitter.com/tchakra2"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    tchakra2
+                  </a>{' '}
+                  finds one on Twitter. If you want yourself to be added to it,
+                  send him a DM.
+                  <br />
+                  <br />
+                  The new Twitter or "X" under Elon has issues with embedding.
+                  If you are unable to see tweets here, click "View on Twitter"
+                  to view it on Twitter.
+                </p>
+              </Column>
+            </Theme>
+          </Column>
+        </Grid>
+      </Theme>
     );
   }
 }

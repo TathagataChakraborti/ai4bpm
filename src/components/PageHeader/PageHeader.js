@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import HeaderContainer from 'carbon-components-react/lib/components/UIShell/HeaderContainer';
 import {
   Header,
   HeaderName,
+  HeaderContainer,
   SkipToContent,
   HeaderNavigation,
   HeaderMenuItem,
-} from 'carbon-components-react/lib/components/UIShell';
+} from '@carbon/react';
 
 class PageHeader extends React.Component {
   constructor(props) {
@@ -26,7 +25,6 @@ class PageHeader extends React.Component {
               <HeaderName element={Link} to="/" prefix="AAAI 2023">
                 Bridge Program
               </HeaderName>
-              }
               <HeaderNavigation aria-label="Tools">
                 <HeaderMenuItem
                   element={Link}

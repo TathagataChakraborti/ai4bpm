@@ -1,14 +1,14 @@
 import React from 'react';
 import { shuffleArray } from '../../components/Info';
 import { Tools } from '../LandingPage/data/Tools';
-import { DocumentVideo16, LogoGithub16, Home16 } from '@carbon/icons-react';
+import { DocumentVideo, LogoGithub, Home } from '@carbon/icons-react';
 import {
   Tile,
   Button,
   ButtonSet,
   Link,
   ToastNotification,
-} from 'carbon-components-react';
+} from '@carbon/react';
 
 const ToolsShuffled = shuffleArray(Tools);
 const link_to_slack =
@@ -36,7 +36,7 @@ const Tool = props => (
               href={props.props.code}
               target="_blank"
               hasIconOnly
-              renderIcon={LogoGithub16}
+              renderIcon={LogoGithub}
               iconDescription="GitHub"
               kind="ghost"
             />
@@ -48,7 +48,7 @@ const Tool = props => (
               href={props.props.home}
               target="_blank"
               hasIconOnly
-              renderIcon={Home16}
+              renderIcon={Home}
               iconDescription="Home"
               kind="ghost"
             />
@@ -60,7 +60,7 @@ const Tool = props => (
               href={props.props.video}
               target="_blank"
               hasIconOnly
-              renderIcon={DocumentVideo16}
+              renderIcon={DocumentVideo}
               iconDescription="Video"
               kind="ghost"
             />
