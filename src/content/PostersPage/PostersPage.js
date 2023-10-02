@@ -99,7 +99,7 @@ class PostersPage extends React.Component {
 
   render() {
     return (
-      <Theme theme="g10">
+      <Theme theme="g10" style={{ minHeight: '100vh' }}>
         <br />
         <Grid>
           {PostersListShuffled.map((item, key) => (

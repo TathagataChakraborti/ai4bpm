@@ -56,14 +56,18 @@ class ProgramPage extends React.Component {
             <br />
             <br />
 
-            <ContentSwitcher
-              selectedIndex={this.state.day - 1}
-              onChange={this.switchDay.bind(this)}
-              size="sm"
-              style={{ marginBottom: '20px' }}>
-              <Switch text="Day 1 Feb 7 EST" />
-              <Switch text="Day 2 Feb 8 EST" />
-            </ContentSwitcher>
+            <Grid>
+              <Column lg={4} md={4} sm={4}>
+                <ContentSwitcher
+                  selectedIndex={this.state.day - 1}
+                  onChange={this.switchDay.bind(this)}
+                  size="sm"
+                  style={{ marginBottom: '20px' }}>
+                  <Switch text="Day 1 Feb 7 EST" />
+                  <Switch text="Day 2 Feb 8 EST" />
+                </ContentSwitcher>
+              </Column>
+            </Grid>
 
             {this.state.day === 1 && (
               <StructuredListWrapper aria-label="Structured list">
