@@ -1,5 +1,4 @@
 import React from 'react';
-import { PostersList } from '../LandingPage/data/Posters';
 import { DocumentPdf, Ppt, DocumentVideo } from '@carbon/icons-react';
 import {
   shuffleArray,
@@ -15,6 +14,8 @@ import {
   Button,
   ButtonSet,
 } from '@carbon/react';
+
+let PostersList = require('../LandingPage/data/Posters.json');
 
 const PostersListShuffled = shuffleArray(PostersList);
 

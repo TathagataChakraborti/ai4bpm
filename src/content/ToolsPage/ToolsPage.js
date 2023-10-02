@@ -1,8 +1,9 @@
 import React from 'react';
 import { shuffleArray } from '../../components/Info';
-import { Tools } from '../LandingPage/data/Tools';
 import { DocumentVideo, LogoGithub, Home } from '@carbon/icons-react';
 import { Theme, Grid, Column, Tile, Button, ButtonSet } from '@carbon/react';
+
+let Tools = require('../LandingPage/data/Tools.json');
 
 const ToolsShuffled = shuffleArray(Tools);
 

@@ -18,7 +18,7 @@ import {
   Tag,
 } from '@carbon/react';
 
-const link_to_call = '/shared/call.pdf';
+const link_to_call = 'shared/call.pdf';
 
 class ProgramPage extends React.Component {
   constructor(props) {
@@ -352,7 +352,7 @@ class ProgramPage extends React.Component {
                         {' '}
                         Hybrid{' '}
                       </Tag>
-                      <a href="/posters" style={{ textDecoration: 'none' }}>
+                      <a href="/#/posters" style={{ textDecoration: 'none' }}>
                         <Tag
                           className="square-pants download-tag"
                           type="blue"
@@ -381,7 +381,7 @@ class ProgramPage extends React.Component {
                         {' '}
                         Hybrid{' '}
                       </Tag>
-                      <a href="/posters" style={{ textDecoration: 'none' }}>
+                      <a href="/#/posters" style={{ textDecoration: 'none' }}>
                         <Tag
                           className="square-pants download-tag"
                           type="blue"
@@ -811,7 +811,7 @@ class ProgramPage extends React.Component {
                       </Button>
                       <Button
                         target="_blank"
-                        href={link_to_call}
+                        href={`${process.env.PUBLIC_URL}/${link_to_call}`}
                         size="sm"
                         kind="secondary"
                         className="call-button">

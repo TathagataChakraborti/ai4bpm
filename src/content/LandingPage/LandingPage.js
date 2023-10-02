@@ -1,8 +1,4 @@
 import React from 'react';
-import { ReferenceList } from './data/References';
-import { InvitedList } from './data/Speakers';
-import { TeamList } from './data/Team';
-import { SisterVenues } from './data/SisterVenues';
 import { Timeline } from 'react-twitter-widgets';
 import {
   Reference,
@@ -12,6 +8,11 @@ import {
 } from '../../components/Info';
 
 import { Theme, Grid, Column, StructuredListBody } from '@carbon/react';
+
+let ReferenceList = require('./data/References.json');
+let InvitedList = require('./data/Speakers.json');
+let TeamList = require('./data/Team.json');
+let SisterVenues = require('./data/SisterVenues.json');
 
 const TeamListShuffled = shuffleArray(TeamList);
 const ExtendedSpeakerList = shuffleArray(TeamList).filter(item => item.speaker);
@@ -82,7 +83,7 @@ const LandingPage = props => {
             <Column lg={16} md={8} sm={4}>
               <img
                 style={{ padding: '30px' }}
-                src="/logo.png"
+                src={`${process.env.PUBLIC_URL}/logo.png`}
                 alt="logo"
                 width="90%"
               />
