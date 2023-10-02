@@ -1,16 +1,5 @@
 ## AI4BPM Bridge at AAAI 2023
 
-### Bring up the backend
-
-```
-$ cd src/backend
-$ pip install -r requirements.txt
-$ python server.py
-```
-
-### Bring up the frontend
-
-```
-$ yarn
-$ yarn start
-```
+![](https://img.shields.io/badge/Artificial%20Intelligence-green)
+![](https://img.shields.io/badge/Automated%20Planning-red)
+![](https://img.shields.io/badge/Business%20Process%20Management-blue)
