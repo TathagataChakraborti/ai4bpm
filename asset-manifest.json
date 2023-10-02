@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ai4bpm/static/css/main.a0b2dbbc.css",
-    "main.js": "/ai4bpm/static/js/main.0d02da7b.js",
+    "main.js": "/ai4bpm/static/js/main.54463ebe.js",
     "static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff": "/ai4bpm/static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.d96e5a614e96c351c453.woff",
     "static/media/IBMPlexSerif-SemiBoldItalic-Latin1.woff": "/ai4bpm/static/media/IBMPlexSerif-SemiBoldItalic-Latin1.b691d8c0c5110ea3659e.woff",
     "static/media/IBMPlexSerif-Italic-Cyrillic.woff": "/ai4bpm/static/media/IBMPlexSerif-Italic-Cyrillic.452cc78a1baf50168631.woff",
@@ -184,10 +184,10 @@
     "static/media/IBMPlexMono-Regular-Latin3.woff2": "/ai4bpm/static/media/IBMPlexMono-Regular-Latin3.cacfd1d7dbd14067b970.woff2",
     "index.html": "/ai4bpm/index.html",
     "main.a0b2dbbc.css.map": "/ai4bpm/static/css/main.a0b2dbbc.css.map",
-    "main.0d02da7b.js.map": "/ai4bpm/static/js/main.0d02da7b.js.map"
+    "main.54463ebe.js.map": "/ai4bpm/static/js/main.54463ebe.js.map"
   },
   "entrypoints": [
     "static/css/main.a0b2dbbc.css",
-    "static/js/main.0d02da7b.js"
+    "static/js/main.54463ebe.js"
   ]
 }
