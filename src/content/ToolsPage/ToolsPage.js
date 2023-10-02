@@ -2,20 +2,9 @@ import React from 'react';
 import { shuffleArray } from '../../components/Info';
 import { Tools } from '../LandingPage/data/Tools';
 import { DocumentVideo, LogoGithub, Home } from '@carbon/icons-react';
-import {
-  Theme,
-  Grid,
-  Column,
-  Tile,
-  Button,
-  ButtonSet,
-  Link,
-  ToastNotification,
-} from '@carbon/react';
+import { Theme, Grid, Column, Tile, Button, ButtonSet } from '@carbon/react';
 
 const ToolsShuffled = shuffleArray(Tools);
-const link_to_slack =
-  'https://urldefense.proofpoint.com/v2/url?u=https-3A__join.slack.com_t_ai4bpm_shared-5Finvite_zt-2D1hcar007m-2D97CUY2F4PUK5BCmVddYZHg&d=DwMFaQ&c=jf_iaSHvJObTbx-siA1ZOg&r=lxDocy3Tofo6h1mjeOs7RQ&m=4otHwQCA9jC8-O_Cq5AWV1Bz1HI-VfVACocnpxf3VsbZgZl3LfCqtmY3BkMKWzF3&s=S9wWtM_n638mI8yiHJNBPVJzgYNlhNGY2fDIiKr_SP8&e=';
 
 const Tool = props => (
   <Column lg={4} md={4} sm={4} style={{ padding: 0, margin: 10 }}>
