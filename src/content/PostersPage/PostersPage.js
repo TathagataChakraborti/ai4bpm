@@ -6,49 +6,51 @@ import {
   generatePDFUrl,
   generatePosterImageUrl,
 } from '../../components/Info';
-import { Tag, Tile, Button, ButtonSet } from '@carbon/react';
+import {
+  Theme,
+  Grid,
+  Column,
+  Tag,
+  Tile,
+  Button,
+  ButtonSet,
+} from '@carbon/react';
 
 const PostersListShuffled = shuffleArray(PostersList);
 
 const Poster = props => (
-  <Tile className="bx--col-lg-3" style={{ padding: 0, margin: 10 }}>
-    <div className="poster" style={{ padding: 15 }}>
-      <div className="bx--row">
-        <div className="bx--col-lg-16">
-          <Tag type="blue" title="Abstract" className="poster-tag">
-            {' '}
-            Abstract{' '}
-          </Tag>
+  <Column lg={3} md={4} sm={4} style={{ padding: 0, margin: 10 }}>
+    <Tile className="poster">
+      <Tag type="blue" title="Abstract" className="poster-tag">
+        {' '}
+        Abstract{' '}
+      </Tag>
 
-          {props.props.Track === 'AI4BPM Demos' && (
-            <Tag type="green" title="Abstract" className="poster-tag">
-              {' '}
-              Demo{' '}
-            </Tag>
-          )}
-          {props.props.Track === 'AI4BPM DC' && (
-            <Tag type="magenta" title="Abstract" className="poster-tag">
-              {' '}
-              Student{' '}
-            </Tag>
-          )}
-        </div>
-      </div>
+      {props.props.Track === 'AI4BPM Demos' && (
+        <Tag type="green" title="Abstract" className="poster-tag">
+          {' '}
+          Demo{' '}
+        </Tag>
+      )}
+      {props.props.Track === 'AI4BPM DC' && (
+        <Tag type="magenta" title="Abstract" className="poster-tag">
+          {' '}
+          Student{' '}
+        </Tag>
+      )}
 
       <br />
-      <div className="bx--row">
-        <div className="bx--col-lg-16">
-          <h6 className="text-blue">{props.props.Title}</h6>
-          <br />
-          <p style={{ fontSize: 'small', lineHeight: '1.25rem' }}>
-            {props.props.Authors}
-          </p>
-        </div>
-      </div>
+      <br />
+      <h6 className="text-blue">{props.props.Title}</h6>
+      <br />
+      <p style={{ fontSize: 'small', lineHeight: '1.25rem' }}>
+        {props.props.Authors}
+      </p>
 
       <div className="poster-links">
         <ButtonSet>
           <Button
+            size="sm"
             className="button-diminish"
             href={generatePDFUrl(props.props['#'])}
             target="_blank"
@@ -60,6 +62,7 @@ const Poster = props => (
 
           {props.props['video'] && (
             <Button
+              size="sm"
               className="button-diminish"
               href={props.props['video']}
               target="_blank"
@@ -72,6 +75,7 @@ const Poster = props => (
 
           {props.props['poster'] && (
             <Button
+              size="sm"
               className="button-diminish"
               href={generatePosterImageUrl(props.props['#'])}
               target="_blank"
@@ -83,8 +87,8 @@ const Poster = props => (
           )}
         </ButtonSet>
       </div>
-    </div>
-  </Tile>
+    </Tile>
+  </Column>
 );
 
 class PostersPage extends React.Component {
@@ -95,23 +99,17 @@ class PostersPage extends React.Component {
 
   render() {
     return (
-      <div className="bx--row">
-        <div className="bx--col-lg-16">
-          <div
-            className="bx--grid bx--grid--full-width container"
-            style={{ backgroundColor: '#f4f4f4', minHeight: '100vh' }}>
-            <br />
-
-            <div className="bx--row">
-              {PostersListShuffled.map((item, key) => (
-                <React.Fragment key={key}>
-                  <Poster props={item} />
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Theme theme="g10">
+        <br />
+        <Grid>
+          {PostersListShuffled.map((item, key) => (
+            <React.Fragment key={key}>
+              <Poster props={item} />
+            </React.Fragment>
+          ))}
+        </Grid>
+        <br />
+      </Theme>
     );
   }
 }

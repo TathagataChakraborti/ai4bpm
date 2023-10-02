@@ -22,24 +22,21 @@ class PageHeader extends React.Component {
           <>
             <Header aria-label="Header">
               <SkipToContent />
-              <HeaderName element={Link} to="/" prefix="AAAI 2023">
+              <HeaderName as={Link} to="/" prefix="AAAI 2023">
                 Bridge Program
               </HeaderName>
               <HeaderNavigation aria-label="Tools">
-                <HeaderMenuItem
-                  element={Link}
-                  to="/tools"
-                  className="pink-diminish">
+                <HeaderMenuItem as={Link} to="/tools" className="pink-diminish">
                   Tools
                 </HeaderMenuItem>
                 <HeaderMenuItem
-                  element={Link}
+                  as={Link}
                   to="/posters"
                   className="blue-diminish">
                   Posters
                 </HeaderMenuItem>
                 <HeaderMenuItem
-                  element={Link}
+                  as={Link}
                   to="/program"
                   className="green-diminish">
                   Program
